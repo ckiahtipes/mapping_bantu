@@ -1,0 +1,27 @@
+TYPE,APD_no,NAME,CODE,LAT,LONG,ALT,CNTRY,PUB YEAR,Region
+APD Chron,1,Yéviédié [YEV-1],YEV1,6.534333333,2.373666667,53,Benin,2002,W. Africa
+APD Chron,29,Lac Nokoué [SOA.99],SOA-99,6.490333333,2.386166667,47,Benin,2002,W. Africa
+APD no Chron,260,Lake Sélé,LACSELE_APD,7.15,2.433333333,,Benin,2005,W. Africa
+APD Chron,27,Goho [GOHO.00],GOHO,6.439166667,2.574166667,35,Benin,2002,W. Africa
+APD Chron,26,Dangbo [DO.00],DANGBO,6.604166667,2.5905,40,Benin,2002,W. Africa
+APD Chron,242,Lake Ossa I,OSSA1,3.775,10.01833333,8,Cameroon,1991,Atlantic Zone
+APD Chron,19,Lake Ossa [OW4],OW4,3.800833333,10.75,8,Cameroon,1995,Atlantic Zone
+APD no Chron,473,Shum Laka [W-10],SHUM,5.85,10.05,1355,Cameroun,1994,Atlantic Zone
+APD Chron,13,Kitina Lake [KT3],KT3,-4.268666667,12,120,Congo,1996,Atlantic Zone
+APD Chron,75,Coraf [CORAF 2],CORAF2,-4.75,11.85,1,Congo,1992,Atlantic Zone
+APD Chron,76,Coraf [CORAF T],CORAFT,-4.75,11.85016667,0,Congo,1992,Atlantic Zone
+APD Chron,103,Songolo [S2],S2,-4.7585,11.85916667,5,Congo,2001,Atlantic Zone
+APD no Chron,17,Bois de Bilanko [LS3],LS3,-3.516666667,15.35,600,Congo,1990,Congo Basin
+APD Chron,15,Bois de Bilanko [LH1],LH1,-3.516666667,15.35016667,600,Congo,1992,Congo Basin
+APD Chron,16,Bois de Bilanko [LH3],LH3,-3.516666667,15.35033333,600,Congo,1992,Congo Basin
+APD Chron,10,Gama 4,GAMA4,-4.071166667,15.38333333,400,Congo,1992,Congo Basin
+APD Chron,9,Gama 2,GAMA2,-4.071666667,15.38333333,400,Congo,1992,Congo Basin
+APD no Chron,465,Lake Télé,TELE,1.333333333,17.16666667,350,Congo,1998,Congo Basin
+APD Chron,21,Lake Sinnda [SN 2],SN2,-3.835,12.8,128,Congo ,1998,Atlantic Zone
+APD Chron,22,Lake Sinnda [SN 3],SN3,-3.834666667,12.8025,128,Congo ,1998,Atlantic Zone
+APD Chron,90,Matupi Cave [MAT-16 and MAT-23],MATUPI,1.5,30,1100,Democratic Republic of Congo,1990,Congo Basin
+APD Chron,226,Mukukwe,MUKUKWE,-2.5,28.55,1470,Democratic Republic of Congo,1995,Congo Basin
+APD Chron,87,Musisi-Karashoma,MUSISI,-2.269333333,28.65616667,2200,Democratic Republic of Congo,1997,Congo Basin
+APD no Chron,222,Kalwira,KALWIRA,-2.518666667,28.756,1920,Democratic Republic of Congo,1995,Congo Basin
+APD Chron,23,Lake Tilla,TILLA,10.39066667,12.1245,690,Nigeria,1999,Sahel
+APD Chron,101,Niger delta core (boring 22),NIGERDC2,4.55,6.433333333,0,Nigeria,1981,Atlantic Zone
