@@ -3,10 +3,11 @@
 #Libraries
 
 library(raster)
-library(terra)
-library(lipdR)
-library(neotoma2)
+#library(terra)
+#library(lipdR)
+#library(neotoma2)
 library(maps)
+library(grDevices)
 
 #Start with locations of cores, extract climate and vegetation data.
 
@@ -15,7 +16,11 @@ library(maps)
 
 nt_sites <- read.csv("neotoma_all.csv", header = TRUE)
 
+all_sites <- read.csv("data/combined_sites.csv", header = TRUE)
+
 site_latlong <- data.frame(nt_sites$lat, nt_sites$lon, row.names = nt_sites$collectionunit)
+
+all_latlong <- data.frame(all_sites$LONG, all_sites$LAT, row.names = all_sites$CODE)
 
 #Extract chronological data from each record.
 
@@ -35,15 +40,15 @@ names(prec)=month
 ###Extracts the data based on lat and long.
 #Making average temp data frame
 
-tavg.data=extract(tavg,site_latlong)
+tavg.data=extract(tavg,all_latlong)
 tavg.data=as.data.frame(tavg.data)
-row.names(tavg.data)=nt_sites$collectionunit
+row.names(tavg.data)=all_sites$CODE
 #
 ##Making precip data frame
 #
-prec.data=extract(prec,site_latlong)
+prec.data=extract(prec,all_latlong)
 prec.data=as.data.frame(prec.data)
-row.names(prec.data)=nt_sites$collectionunit
+row.names(prec.data)=all_sites$CODE
 
 #Basic mapping.
 
@@ -95,15 +100,47 @@ names(seasonal)=c("DJF.prec","MAM.prec","JJA.prec","SON.prec")
 seas_names=c("DJF","MAM","JJA","SON")
 
 ###Annual precip.
-par(mar=c(5,4,4,5)+0.1)
+par(mar=c(5,4,4,7)+0.1)
 prec.annual=sum(proj.prec[[1:12]])
 ann.iso=rasterToContour(prec.annual)
 plot(0,0,xlim=LON_RANGE,ylim=LAT_RANGE,xlab="Lon",ylab="Lat",pch=NA)
 plot(prec.annual,col=tempcol(100),xlim=map_LON,ylim=map_LAT,add=TRUE)
-plot(ann.iso,add=TRUE,lty=2)
-points(nt_sites$lon, nt_sites$lat, pch = 21, bg = "black")
+plot(ann.iso,add=TRUE,lty=3)
+points(all_sites$LONG, all_sites$LAT, pch = 21, bg = "gold")
 map("world",add=TRUE,xlim=map_LON)
 title(main="Annual Precipitation, WorldClim 2.1")
 par(old.mar)
 
 gc()
+
+#Map seasonal precipitation.
+par(mar=c(5,4,4,7)+0.1, mfrow = c(2,2))
+for(i in 1:length(seasonal)){
+  ses.iso = rasterToContour(seasonal[[i]])
+  plot(0, 0, xlim = LON_RANGE, ylim = LAT_RANGE, xlab = "Lon", ylab = "Lat", pch = NA)
+  plot(seasonal[[i]], col = tempcol(100), xlim = map_LON, ylim = map_LAT, add = TRUE)
+  plot(ses.iso, add = TRUE, lty = 3)
+  map("world", add = TRUE, xlim = map_LON, ylim = map_LAT)
+  points(all_sites$LONG, all_sites$LAT, pch = 21, bg = "gold")
+  title(main = paste0(seas_names[i], " Precip in mm"))
+}
+par(old.mar, mfrow = c(1,1))
+
+gc()
+#Let's work with some climate and precipitation data.
+
+#Order by latitutde
+
+prec.data = prec.data[order(all_sites$LAT), ]
+tavg.data = tavg.data[order(all_sites$LAT), ]
+
+
+par(mar = c(5, 6, 4, 5) + 0.1, mfrow = c(1,2))
+barplot(t(prec.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation From WorldClim 2.1")
+
+barplot(t(tavg.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Avg. Temp. From WorldClim 2.1")
+par(old.mar, mfrow = c(1,1))
+
+
+
+
