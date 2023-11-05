@@ -4,6 +4,8 @@ library(raster)
 library(maps)
 library(grDevices)
 
+#Logical for saving picures
+
 #Read file with site locations.
 
 all_sites <- read.csv("data/combined_sites.csv", header = TRUE)
@@ -60,7 +62,7 @@ map_LON=c(6,25) #Defining a different mapped area from the latitude/longitude se
 cm_col=colorRampPalette(c("#c5c5c500","#3d85c699"), alpha = TRUE)
 ft_col=colorRampPalette(c("#878cff","#d2fc9e","#748729"))
 
-ft_col=c("dark green", "orange", "green", "sky blue", "light green", "dark orange", "brown", "brown", "brown")
+ft_col=c("dark green", "blue", "green", "sky blue", "light green", "dark orange", "brown", "brown", "brown")
 
 hw_col=colorRampPalette(c("#c5c5c500","#3d85c699"), alpha = TRUE)
 #pl_col=colorRampPalette(c(NA,"light blue"))
@@ -80,7 +82,7 @@ map("world",add=TRUE,xlim=map_LON,ylim=map_LAT)
 
 #Contours!
 #ft.contour = rasterToContour(ft.raster, nlevels = 9)
-#plot(ann.iso, lty = 3, lwd = 3, col = "#54524c",add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
+plot(ann.iso, lty = 3, lwd = 3, col = "#54524c",add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 
 #points(all_sites$LONG, all_sites$LAT, pch = 21, bg = "gold")
 
