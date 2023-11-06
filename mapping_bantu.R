@@ -16,9 +16,11 @@ library(grDevices)
 
 nt_sites <- read.csv("neotoma_all.csv", header = TRUE)
 
-all_sites <- read.csv("data/combined_sites.csv", header = TRUE)
+read_sites <- read.csv("data/combined_sites.csv", header = TRUE)
 
 site_latlong <- data.frame(nt_sites$lat, nt_sites$lon, row.names = nt_sites$collectionunit)
+
+all_sites <- read_sites[read_sites$Database != "APD no Chron", ]
 
 all_latlong <- data.frame(all_sites$LONG, all_sites$LAT, row.names = all_sites$CODE)
 
@@ -54,8 +56,8 @@ row.names(prec.data)=all_sites$CODE
 
 ###MAPPING SETUP
 
-LAT_RANGE=c(-10,15)
-LON_RANGE=c(-5,30)
+LAT_RANGE=c(-9,9)
+LON_RANGE=c(6,25)
 
 #LAT_RANGE=c(20,30)
 #LON_RANGE=c(-90,-80)
@@ -63,8 +65,8 @@ LON_RANGE=c(-5,30)
 
 tempcol=colorRampPalette(c("purple","blue","skyblue","green","lightgreen","yellow","orange","red","darkred")) #This is a cool means of constructing gradient colors
 
-map_LAT=c(-25,25) #Defining a different mapped area from the latitude/longitude selection of the taxa
-map_LON=c(-20,40) #Defining a different mapped area from the latitude/longitude selection of the taxa
+map_LAT=c(-10,10) #Defining a different mapped area from the latitude/longitude selection of the taxa
+map_LON=c(5,26) #Defining a different mapped area from the latitude/longitude selection of the taxa
 
 #map_LAT=c(15,35) #Defining a different mapped area from the latitude/longitude selection of the taxa
 #map_LON=c(-100,-70) #Defining a different mapped area from the latitude/longitude selection of the taxa
@@ -134,9 +136,15 @@ gc()
 prec.data = prec.data[order(all_sites$LAT), ]
 tavg.data = tavg.data[order(all_sites$LAT), ]
 
+new_lat <- all_sites$LAT[order(all_sites$LAT)]
+new_lon <- all_sites$LONG[order(all_sites$LAT)]
+
+#filter by lat/long
+
+prsl.data = prec.data[new_lat > LAT_RANGE[1] & new_lat < 8 & new_lon > LON_RANGE[1] & new_lon < LON_RANGE[2], ]
 
 par(mar = c(5, 6, 4, 5) + 0.1, mfrow = c(1,2))
-barplot(t(prec.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation From WorldClim 2.1")
+barplot(t(prsl.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation From WorldClim 2.1")
 
 barplot(t(tavg.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Avg. Temp. From WorldClim 2.1")
 par(old.mar, mfrow = c(1,1))
