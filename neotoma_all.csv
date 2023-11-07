@@ -1,23 +1,23 @@
-"","siteid","sitename","collectionunit","chronolgies","datasets","types","lat","lon"
-"1","28404","Jikariya","JIKARIYA",1,2,"geochronologic,pollen",13.31367,11.077
-"2","29066","Mboadong","MBOADONG",1,2,"geochronologic,pollen",4.45,9.2689
-"3","27149","Bois de Bilanko","LH3",2,2,"geochronologic,pollen",-3.51385,15.35116
-"4","27149","Bois de Bilanko","LS3",1,2,"pollen,geochronologic",-3.51385,15.35116
-"5","27149","Bois de Bilanko","LH1",2,2,"pollen,geochronologic",-3.51385,15.35116
-"6","28227","Lake Sinnda","SN2",2,2,"pollen,geochronologic",-3.83556,12.80417
-"7","28227","Lake Sinnda","SN3",3,2,"pollen,geochronologic",-3.83556,12.80417
-"8","23662","Bambili 1","BAMBILI1",1,2,"geochronologic,pollen",5.934466,10.243308
-"9","28312","Lake Ossa 2","OW4",3,2,"pollen,geochronologic",3.80139,10.75
-"10","27707","Kajemarum Oasis","KAJ",3,2,"geochronologic,pollen",13.30833,11.03694
-"11","28301","Ngamakala Pound","GAMA4",3,2,"geochronologic,pollen",-4.075,15.38333
-"12","28301","Ngamakala Pound","GAMA2",3,2,"pollen,geochronologic",-4.075,15.38333
-"13","27167","Songolo","SONGOLO",2,2,"pollen,geochronologic",-4.7662,11.86641
-"14","30333","Tjéri","TJERI",3,2,"pollen,geochronologic",13.73333,16.5
-"15","27416","Mbalang [M4]","MBALA",1,2,"pollen,geochronologic",7.31667,13.73333
-"16","27528","Bal Lake","BAL",3,2,"geochronologic,pollen",13.30694,10.94944
-"17","27159","CORAF","CORAF2",2,2,"geochronologic,pollen",-4.74201,11.84659
-"18","27159","CORAF","CORAFT",2,2,"geochronologic,pollen",-4.74201,11.84659
-"19","28406","Kitina Lake","KT3",3,2,"pollen,geochronologic",-4.27,12
-"20","28247","Kaigama","KAI",3,2,"geochronologic,pollen",13.25278,11.56889
-"21","27428","Tizong [T2]","TIZONG",1,2,"geochronologic,pollen",7.25,13.58333
-"22","27424","Lake Tilla","TILLA",3,2,"geochronologic,pollen",10.39556,12.12972
+,siteid,sitename,collectionunit,chronolgies,datasets,types,lat,lon,region
+1,28404,Jikariya,JIKARIYA,1,2,"geochronologic,pollen",13.31367,11.077,Sahel
+2,29066,Mboadong,MBOADONG,1,2,"geochronologic,pollen",4.45,9.2689,Atl_forest
+3,27149,Bois de Bilanko,LH3,2,2,"geochronologic,pollen",-3.51385,15.35116,Bateke
+4,27149,Bois de Bilanko,LS3,1,2,"pollen,geochronologic",-3.51385,15.35116,Bateke
+5,27149,Bois de Bilanko,LH1,2,2,"pollen,geochronologic",-3.51385,15.35116,Bateke
+6,28227,Lake Sinnda,SN2,2,2,"pollen,geochronologic",-3.83556,12.80417,Atl_forest
+7,28227,Lake Sinnda,SN3,3,2,"pollen,geochronologic",-3.83556,12.80417,Atl_forest
+8,23662,Bambili 1,BAMBILI1,1,2,"geochronologic,pollen",5.934466,10.243308,Atl_forest
+9,28312,Lake Ossa 2,OW4,3,2,"pollen,geochronologic",3.80139,10.75,Atl_forest
+10,27707,Kajemarum Oasis,KAJ,3,2,"geochronologic,pollen",13.30833,11.03694,Sahel
+11,28301,Ngamakala Pound,GAMA4,3,2,"geochronologic,pollen",-4.075,15.38333,Bateke
+12,28301,Ngamakala Pound,GAMA2,3,2,"pollen,geochronologic",-4.075,15.38333,Bateke
+13,27167,Songolo,SONGOLO,2,2,"pollen,geochronologic",-4.7662,11.86641,Atl_forest
+14,30333,Tjeri,TJERI,3,2,"pollen,geochronologic",13.73333,16.5,Sahel
+15,27416,Mbalang [M4],MBALA,1,2,"pollen,geochronologic",7.31667,13.73333,Sdn_trans
+16,27528,Bal Lake,BAL,3,2,"geochronologic,pollen",13.30694,10.94944,Sahel
+17,27159,CORAF,CORAF2,2,2,"geochronologic,pollen",-4.74201,11.84659,Atl_forest
+18,27159,CORAF,CORAFT,2,2,"geochronologic,pollen",-4.74201,11.84659,Atl_forest
+19,28406,Kitina Lake,KT3,3,2,"pollen,geochronologic",-4.27,12,Atl_forest
+20,28247,Kaigama,KAI,3,2,"geochronologic,pollen",13.25278,11.56889,Sahel
+21,27428,Tizong [T2],TIZONG,1,2,"geochronologic,pollen",7.25,13.58333,Sdn_trans
+22,27424,Lake Tilla,TILLA,3,2,"geochronologic,pollen",10.39556,12.12972,Sdn_trans
