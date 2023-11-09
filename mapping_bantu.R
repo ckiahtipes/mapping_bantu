@@ -111,7 +111,7 @@ plot(ann.iso,add=TRUE,lty=3)
 points(all_sites$LONG, all_sites$LAT, pch = 21, bg = "gold")
 map("world",add=TRUE,xlim=map_LON)
 title(main="Annual Precipitation, WorldClim 2.1")
-par(old.mar)
+par(mar=c(5, 4, 4, 2) + 0.1)
 
 gc()
 
@@ -126,7 +126,7 @@ for(i in 1:length(seasonal)){
   points(all_sites$LONG, all_sites$LAT, pch = 21, bg = "gold")
   title(main = paste0(seas_names[i], " Precip in mm"))
 }
-par(old.mar, mfrow = c(1,1))
+par(mar=c(5, 4, 4, 2) + 0.1, mfrow = c(1,1))
 
 gc()
 #Let's work with some climate and precipitation data.
@@ -147,7 +147,7 @@ par(mar = c(5, 6, 4, 5) + 0.1, mfrow = c(1,2))
 barplot(t(prsl.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation From WorldClim 2.1")
 
 barplot(t(tavg.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Avg. Temp. From WorldClim 2.1")
-par(old.mar, mfrow = c(1,1))
+par(mar=c(5, 4, 4, 2) + 0.1, mfrow = c(1,1))
 
 
 
