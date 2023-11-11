@@ -6,13 +6,27 @@ library(grDevices)
 
 #Logical for saving picures
 
-#Read file with site locations.
+#Read file with collection units and site locations.
 
-read_sites <- read.csv("data/combined_sites.csv", header = TRUE)
+all_read <- read.csv("data/MB_data-read.csv", header = TRUE)
 
-all_sites <- read_sites[read_sites$Database != "APD no Chron", ]
+all_latlong <- data.frame(all_read$LON, all_read$LAT, row.names = all_read$COLL_UNIT)
+colnames(all_latlong) = c("LON", "LAT")
 
-all_latlong <- data.frame(all_sites$LONG, all_sites$LAT, row.names = all_sites$CODE)
+locations <- unique(all_read$Map.Locale)
+
+rd_loc <- locations
+
+rd_lon <- sapply(locations, function(x){
+  all_read$LON[all_read$Map.Locale == x][1]
+})
+
+rd_lat <- sapply(locations, function(x){
+  all_read$LAT[all_read$Map.Locale == x][1]
+})
+
+all_locations <- data.frame(rd_lon, rd_lat, row.names = locations)
+colnames(all_locations) = c("LON", "LAT")
 
 #Get file paths for necessary vegetation maps.
 
@@ -49,7 +63,7 @@ ft.extract <- extract(ft.raster, all_latlong)
 ET.extract <- extract(ET.raster, all_latlong)
 EG.extract <- extract(EG.raster, all_latlong)
 
-veg_assign <- data.frame(hw.extract, pl.extract, cm.extract, ft.extract, ET.extract, EG.extract, row.names = all_sites$CODE)
+veg_assign <- data.frame(hw.extract, pl.extract, cm.extract, ft.extract, ET.extract, EG.extract, row.names = all_read$COLL_UNIT)
 
 #Map and data range
 
@@ -86,9 +100,9 @@ map("world",add=TRUE,xlim=map_LON,ylim=map_LAT)
 #ft.contour = rasterToContour(ft.raster, nlevels = 9)
 plot(ann.iso, lty = 3, lwd = 3, col = "#54524c",add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 
-points(all_sites$LONG, all_sites$LAT, pch = 21, bg = "gold")
+points(all_latlong$LON, all_latlong$LAT, pch = 21, bg = "gold")
 
-
+gc()
 
 
 
