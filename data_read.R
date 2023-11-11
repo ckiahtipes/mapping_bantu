@@ -1,16 +1,15 @@
 #R script for reading Neotoma and APD data and composing primary mapping datasets.
 
 library(neotoma2)
-library(rcarbon)
 library(lipdR)
 
 #Call sites, datasets, and downloads from neotoma.
 
-nt_read <- read.csv("neotoma_all.csv", header = TRUE, row.names = "X")
+all_read <- read.csv("data/MB_data-read.csv", header = TRUE)
 
-nt_sites <- get_sites(nt_read$siteid)
+nt_sites <- get_sites(all_read$NEOTOMA_ID[all_read$Source == "Neotoma"])
 
-site_latlong <- data.frame(nt_read$lon, nt_read$lat, row.names = nt_read$collectionunit)
+site_latlong <- data.frame(all_read$LON, all_read$LAT, row.names = all_read$COLL_UNIT)
 
 nt_sites_detail <- summary(nt_sites)
 
@@ -26,22 +25,23 @@ nt_chron <- chroncontrols(nt_download)
 
 nt_radiocarbon <- nt_chron[nt_chron$chroncontroltype == "Radiocarbon" & is.na(nt_chron$chroncontroltype) == FALSE, ]
 
-nt_notread <- nt_chron[nt_chron$chroncontroltype == "Radiocarbon, calibrated" & is.na(nt_chron$chroncontroltype) == FALSE, ]
+#nt_notread <- nt_chron[nt_chron$chroncontroltype == "Radiocarbon, calibrated" & is.na(nt_chron$chroncontroltype) == FALSE, ]
 
-nt_nrd_ids <- unique(nt_notread$siteid)
+#nt_nrd_ids <- unique(nt_notread$siteid)
 
-nrd_names <- sapply(nt_nrd_ids, function(x){
-  n = nt_read$sitename[nt_read$siteid == x]
-  r = unique(n)
-  r
-})
+#nrd_names <- sapply(nt_nrd_ids, function(x){
+#  n = nt_read$sitename[nt_read$siteid == x]
+#  r = unique(n)
+#  r
+#})
 
 #Here we extract the names of the sites for which we returned chronologies.
 
 chron_ids <- unique(nt_radiocarbon$siteid)
 chron_names <- sapply(chron_ids, function(x){
-  n = nt_read$sitename[nt_read$siteid == x]
-  r = unique(n)
+  n = all_read$Map.Locale[all_read$NEOTOMA_ID == x]
+  r = n[is.na(n) == FALSE]
+  r = unique(r)
   r
 })
 
@@ -190,7 +190,7 @@ row.names(APD_rloc) = APD_nlst
 colnames(APD_rloc) = c("LON","LAT")
 
 nt_rloc <- sapply(unique(site_names), function(x){
-  pull = site_latlong[nt_read$sitename == x,]
+  pull = site_latlong[all_read$Map.Locale == x,]
   pull[1,]
 })
 

@@ -1,0 +1,38 @@
+﻿Map Locale,COLL_UNIT,NAME,LON,LAT,APD_ID,NEOTOMA_ID,COUNTRY,REGION,GEO,Source
+Niger River Delta,NIGERDC2,Niger delta core (boring 22),6.433333,4.55,101,NA,Nigeria,ATL-FOR,Estuarine,APD
+Nyabessan,NYABESSAM,Nyabessam,10.4,2.39,156,NA,Cameroon,ATL-FOR,Swamp/Floodplain,Manual entry
+Lake Ossa,OSSA1,Lake Ossa I,9.996465,3.77,242,NA,Cameroon,ATL-FOR,Lake,APD
+Lake Ossa,OW4,Lake Ossa [OW4],9.996465,3.779141,19,28312,Cameroon,ATL-FOR,Lake,Neotoma
+Mboandong,MBOADONG,Mboadong,9.2689,4.45,120,29066,Cameroon,ATL-FOR,Lake,APD
+Barombi Mbo,BM [6],Barombi Mbo,9.4,4.67,300,NA,Cameroon,ATL-FOR,Lake,Manual entry
+Monoun,MONOUN,Monoun,10.581908,5.566042,1191,NA,Cameroon,ATL-MTN,Lake,APD
+Bambili,BAMBILI1,Bambili 1,10.240641,5.933689,2273,23662,Cameroon,ATL-MTN,Lake,APD
+Mbi Crater,MBI,Mbi Crater,10.348549,6.089273,2015,NA,Cameroon,ATL-MTN,Lake,APD
+Tizong,TIZONG,Tizong [T2],13.58333,7.25,1160,27428,Cameroon,ATL-MTN,Lake,APD
+Mbalang,MBALA,Mbalang [M4],13.73333333,7.316666667,1110,27416,Cameroon,ATL-MTN,Lake,Neotoma
+Kamalété,KAM [1],Kamalete,11.77,-0.72,350,NA,Gabon,ATL-FOR,Shallow Basin,Manual entry
+Nguene,NGUENE,Nguené,10.47,-0.2,20,NA,Gabon,ATL-FOR,Lake,Manual entry
+Mariador,MARIADOR,Mariador,9.35,-0.17,5,NA,Gabon,ATL-FOR,Lake,Manual entry
+Songolo,S2,Songolo,11.86641,-4.7662,103,27167,Congo,ATL-FOR,Estuarine,Neotoma
+Coraf,CORAF2,Coraf [CORAF 2],11.85,-4.75,75,27159,Congo,ATL-FOR,Estuarine,Neotoma
+Coraf,CORAFT,Coraf [CORAF T],11.850278,-4.74201,76,27159,Congo,ATL-FOR,Estuarine,Neotoma
+Kitina Lake,KT3,Kitina Lake,12,-4.27,13,28406,Congo,ATL-FOR,Lake,Neotoma
+Lake Sinnda,SN2,Lake Sinnda,12.8,-3.836111,21,28227,Congo,ATL-FOR,Lake,Neotoma
+Lake Sinnda,SN3,Lake Sinnda,12.804167,-3.835556,22,28227,Congo,ATL-FOR,Lake,Neotoma
+Ngamakala Pond,GAMA4,Ngamakala Pound,15.38333,-4.075,10,28301,Congo,BATEKE,Lake,Neotoma
+Ngamakala Pond,GAMA2,Ngamakala Pound,15.383333,-4.075,9,28301,Congo,BATEKE,Lake,Neotoma
+Bois de Bilanko,LH1,Bois de Bilanko [LH1],15.350278,-3.516667,15,27149,Congo,BATEKE,Shallow Basin,Neotoma
+Bois de Bilanko,LH3,Bois de Bilanko [LH3],15.35116,-3.51385,16,27149,Congo,BATEKE,Shallow Basin,Neotoma
+Ekolongouma,EKGkm7-2015,Ekolongouma,17.75,1.175,327,NA,Congo,LWD-FOR,Swamp/Floodplain,Manual entry
+Ekolongouma,EKGkm4,Ekolongouma,17.8,1.18,327,NA,Congo,LWD-FOR,Swamp/Floodplain,Manual entry
+Ekolongouma,CEN-17,Ekolongouma,17.6399,1.1835,327,NA,Congo,LWD-FOR,Swamp/Floodplain,Manual entry
+Ekolongouma,EKGkm9,Ekolongouma,17.7,1.1835,327,NA,Congo,LWD-FOR,Swamp/Floodplain,Manual entry
+Ekolongouma,ITGkm6,Itanga,17.48,1.2,327,NA,Congo,LWD-FOR,Swamp/Floodplain,Manual entry
+Goualougo,GOUALOUGO,Goualougo Lake,16.51,2.16,370,NA,Congo,LWD-FOR,Shallow Basin,No Data
+Bemba Yanga,B-YANGA,B-Yanga,16.52513,2.18726,396,NA,Congo,LWD-FOR,Shallow Basin,APD
+Mopo Bai,MOPO BAI,Mopo Bai,"16.26139	",2.24056,390,NA,Congo,LWD-FOR,Shallow Basin,Manual entry
+Ngotto Forest,FC000,Bodingué,"16.85623	",3.6635,573,NA,CAR,LWD-FOR,Swamp/Floodplain,Manual entry
+Ngotto Forest,FC400,Loamé,17.46669641,3.833375907,448,NA,CAR,LWD-FOR,Swamp/Floodplain,APD
+Ngotto Forest,FC300,Mbaéré,16.95210569,3.975921937,459,NA,CAR,LWD-FOR,Swamp/Floodplain,APD
+Mai Ndombe,ING100,Mpotomangé,18.281984,-1.972768,NA,NA,DRC,LWD-FOR,Swamp/Lake Margin,Manual entry
+Mai Ndombe,ING800,Nkolé,18.320172,-1.774525,NA,NA,DRC,LWD-FOR,Swamp/Lake Margin,Manual entry
