@@ -12,7 +12,7 @@ LON_RANGE=c(6,25)
 #Call sites, datasets, and downloads from neotoma.
 
 all_read <- read.csv("data/MB_data-read.csv", header = TRUE)
-C14_read <- read.csv("data/combined_14Craw.csv", header = TRUE)
+C14_read <- read.csv("data/combined_14Craw_groups.csv", header = TRUE)
 
 #Use rcarbon functions to make SPD
 

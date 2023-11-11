@@ -1,0 +1,265 @@
+all_14C,all_err,all_nme,cal_curve,region,geo
+802,33,B-YANGA,intcal20,LWD-FOR,Shallow Basin
+2834,42,B-YANGA,intcal20,LWD-FOR,Shallow Basin
+4699,40,B-YANGA,intcal20,LWD-FOR,Shallow Basin
+1125,30,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+1745,30,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+2170,30,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+2315,30,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+2485,30,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+3175,30,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+5515,30,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+7255,35,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+8160,45,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+10050,45,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+11560,50,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+12550,50,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+13180,60,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+14330,60,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+14150,60,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+15020,60,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+15840,70,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+16910,70,BAMBILI [BB-01],intcal20,ATL-FOR,Lake
+345,37,LOAME [FC 400],intcal20,LWD-FOR,Swamp/Floodplain
+270,40,MBAERE [FC 300],intcal20,LWD-FOR,Swamp/Floodplain
+480,40,MBAERE [FC 300],intcal20,LWD-FOR,Swamp/Floodplain
+1240,40,MBAERE [FC 300],intcal20,LWD-FOR,Swamp/Floodplain
+780,30,MBI,intcal20,ATL-FOR,Lake
+1795,30,MBI,intcal20,ATL-FOR,Lake
+2580,30,MBI,intcal20,ATL-FOR,Lake
+4290,30,MBI,intcal20,ATL-FOR,Lake
+4690,30,MBI,intcal20,ATL-FOR,Lake
+5125,30,MBI,intcal20,ATL-FOR,Lake
+5180,40,MBI,intcal20,ATL-FOR,Lake
+6550,40,MBI,intcal20,ATL-FOR,Lake
+7375,40,MBI,intcal20,ATL-FOR,Lake
+8015,30,MBI,intcal20,ATL-FOR,Lake
+8915,45,MBI,intcal20,ATL-FOR,Lake
+9485,40,MBI,intcal20,ATL-FOR,Lake
+9895,40,MBI,intcal20,ATL-FOR,Lake
+10200,40,MBI,intcal20,ATL-FOR,Lake
+11800,45,MBI,intcal20,ATL-FOR,Lake
+12605,45,MBI,intcal20,ATL-FOR,Lake
+13080,50,MBI,intcal20,ATL-FOR,Lake
+2380,70,MBOANDONG,intcal20,ATL-FOR,Lake
+4520,90,MBOANDONG,intcal20,ATL-FOR,Lake
+5930,110,MBOANDONG,intcal20,ATL-FOR,Lake
+1090,30,MONOUN,intcal20,ATL-FOR,Lake
+2175,30,MONOUN,intcal20,ATL-FOR,Lake
+1225,30,MONOUN,intcal20,ATL-FOR,Lake
+1170,30,MONOUN,intcal20,ATL-FOR,Lake
+1955,30,MONOUN,intcal20,ATL-FOR,Lake
+2815,30,MONOUN,intcal20,ATL-FOR,Lake
+9495,50,MONOUN,intcal20,ATL-FOR,Lake
+10930,50,MONOUN,intcal20,ATL-FOR,Lake
+11120,70,MONOUN,intcal20,ATL-FOR,Lake
+13590,80,MONOUN,intcal20,ATL-FOR,Lake
+13880,80,MONOUN,intcal20,ATL-FOR,Lake
+60,60,NIGERDC [2],intcal20,ATL-FOR,Estuarine
+70,70,NIGERDC [2],intcal20,ATL-FOR,Estuarine
+90,90,NIGERDC [2],intcal20,ATL-FOR,Estuarine
+130,130,NIGERDC [2],intcal20,ATL-FOR,Estuarine
+660,60,OSSA [1],intcal20,ATL-FOR,Lake
+6000,260,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+2580,240,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+6810,460,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+2720,240,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+2580,240,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+2750,240,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+1490,220,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+6000,260,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+6810,460,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+10850,400,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+1340,260,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+2170,240,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+4490,280,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+2170,240,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+1340,260,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+4490,280,Bois de Bilanko,shcal20,BATEKE,Shallow Basin
+4290,140,Lake Sinnda,shcal20,BATEKE,Lake
+4940,160,Lake Sinnda,shcal20,BATEKE,Lake
+650,160,Lake Sinnda,shcal20,BATEKE,Lake
+5240,140,Lake Sinnda,shcal20,BATEKE,Lake
+1230,100,Lake Sinnda,shcal20,BATEKE,Lake
+3990,140,Lake Sinnda,shcal20,BATEKE,Lake
+1760,100,Lake Sinnda,shcal20,BATEKE,Lake
+400,80,Lake Sinnda,shcal20,BATEKE,Lake
+4460,100,Lake Sinnda,shcal20,BATEKE,Lake
+90,100,Lake Sinnda,shcal20,BATEKE,Lake
+2442,86,Lake Ossa,intcal20,ATL-FOR,Lake
+90,120,Lake Ossa,intcal20,ATL-FOR,Lake
+3330,120,Lake Ossa,intcal20,ATL-FOR,Lake
+4580,120,Lake Ossa,intcal20,ATL-FOR,Lake
+3880,120,Lake Ossa,intcal20,ATL-FOR,Lake
+1890,120,Lake Ossa,intcal20,ATL-FOR,Lake
+4770,120,Lake Ossa,intcal20,ATL-FOR,Lake
+10880,320,Ngamakala Pond,shcal20,BATEKE,Lake
+24200,960,Ngamakala Pond,shcal20,BATEKE,Lake
+13260,440,Ngamakala Pond,shcal20,BATEKE,Lake
+24000,1160,Ngamakala Pond,shcal20,BATEKE,Lake
+14090,460,Ngamakala Pond,shcal20,BATEKE,Lake
+540,320,Ngamakala Pond,shcal20,BATEKE,Lake
+1610,400,Ngamakala Pond,shcal20,BATEKE,Lake
+16300,280,Ngamakala Pond,shcal20,BATEKE,Lake
+22170,1200,Ngamakala Pond,shcal20,BATEKE,Lake
+6500,280,Ngamakala Pond,shcal20,BATEKE,Lake
+1050,260,Ngamakala Pond,shcal20,BATEKE,Lake
+3960,120,Songolo,shcal20,ATL-FOR,Estuarine
+5220,100,Songolo,shcal20,ATL-FOR,Estuarine
+4930,100,Songolo,shcal20,ATL-FOR,Estuarine
+6630,220,Songolo,shcal20,ATL-FOR,Estuarine
+3065,80,Songolo,shcal20,ATL-FOR,Estuarine
+3890,100,Songolo,shcal20,ATL-FOR,Estuarine
+4400,100,Songolo,shcal20,ATL-FOR,Estuarine
+5000,120,Songolo,shcal20,ATL-FOR,Estuarine
+6100,100,Songolo,shcal20,ATL-FOR,Estuarine
+4630,160,Songolo,shcal20,ATL-FOR,Estuarine
+3890,100,Songolo,shcal20,ATL-FOR,Estuarine
+3065,80,Songolo,shcal20,ATL-FOR,Estuarine
+4400,100,Songolo,shcal20,ATL-FOR,Estuarine
+3960,120,Songolo,shcal20,ATL-FOR,Estuarine
+4630,160,Songolo,shcal20,ATL-FOR,Estuarine
+4930,100,Songolo,shcal20,ATL-FOR,Estuarine
+5000,120,Songolo,shcal20,ATL-FOR,Estuarine
+5220,100,Songolo,shcal20,ATL-FOR,Estuarine
+6100,100,Songolo,shcal20,ATL-FOR,Estuarine
+6630,220,Songolo,shcal20,ATL-FOR,Estuarine
+3050,80,Songolo,shcal20,ATL-FOR,Estuarine
+3190,120,Songolo,shcal20,ATL-FOR,Estuarine
+6400,280,Mbalang,intcal20,ATL-FOR,Lake
+1796,124,Mbalang,intcal20,ATL-FOR,Lake
+4023,116,Mbalang,intcal20,ATL-FOR,Lake
+535,85,Mbalang,intcal20,ATL-FOR,Lake
+5460,140,Kitina Lake,shcal20,ATL-FOR,Lake
+2770,80,Kitina Lake,shcal20,ATL-FOR,Lake
+490,80,Kitina Lake,shcal20,ATL-FOR,Lake
+1340,80,Kitina Lake,shcal20,ATL-FOR,Lake
+4020,80,Kitina Lake,shcal20,ATL-FOR,Lake
+4900,80,Kitina Lake,shcal20,ATL-FOR,Lake
+2490,120,Kitina Lake,shcal20,ATL-FOR,Lake
+1900,80,Kitina Lake,shcal20,ATL-FOR,Lake
+1590,300,Coraf,shcal20,ATL-FOR,Estuarine
+3060,340,Coraf,shcal20,ATL-FOR,Estuarine
+1590,300,Coraf,shcal20,ATL-FOR,Estuarine
+3060,340,Coraf,shcal20,ATL-FOR,Estuarine
+2670,280,Coraf,shcal20,ATL-FOR,Estuarine
+2830,240,Coraf,shcal20,ATL-FOR,Estuarine
+940,220,Coraf,shcal20,ATL-FOR,Estuarine
+2670,280,Coraf,shcal20,ATL-FOR,Estuarine
+940,220,Coraf,shcal20,ATL-FOR,Estuarine
+2830,240,Coraf,shcal20,ATL-FOR,Estuarine
+2550,60,Tizong,intcal20,ATL-FOR,Lake
+545,60,Tizong,intcal20,ATL-FOR,Lake
+1040,60,Tizong,intcal20,ATL-FOR,Lake
+1610,60,Tizong,intcal20,ATL-FOR,Lake
+3780,100,Tizong,intcal20,ATL-FOR,Lake
+3315,70,Tizong,intcal20,ATL-FOR,Lake
+834,35,FC000,intcal20,LWD-FOR,Swamp/Floodplain
+2171,37,FC000,intcal20,LWD-FOR,Swamp/Floodplain
+2362,39,FC000,intcal20,LWD-FOR,Swamp/Floodplain
+770,100,BM6,intcal20,ATL-FOR,Lake
+2200,285,BM6,intcal20,ATL-FOR,Lake
+3690,315,BM6,intcal20,ATL-FOR,Lake
+6520,645,BM6,intcal20,ATL-FOR,Lake
+8690,475,BM6,intcal20,ATL-FOR,Lake
+9900,250,BM6,intcal20,ATL-FOR,Lake
+13120,965,BM6,intcal20,ATL-FOR,Lake
+13480,240,BM6,intcal20,ATL-FOR,Lake
+15470,100,BM6,intcal20,ATL-FOR,Lake
+17080,885,BM6,intcal20,ATL-FOR,Lake
+20420,1500,BM6,intcal20,ATL-FOR,Lake
+24080,3500,BM6,intcal20,ATL-FOR,Lake
+1770,30,MOPOBAI,intcal20,LWD-FOR,Shallow Basin
+1445,35,MOPOBAI,intcal20,LWD-FOR,Shallow Basin
+1470,30,MOPOBAI,intcal20,LWD-FOR,Shallow Basin
+2360,40,MOPOBAI,intcal20,LWD-FOR,Shallow Basin
+2530,35,MOPOBAI,intcal20,LWD-FOR,Shallow Basin
+686,29,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+2011,29,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+1121,77,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+3755,32,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+5573,55,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+5040,35,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+12464,49,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+13286,55,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+17938,90,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+12222,51,ING100,shcal20,LWD-FOR,Swamp/Lake Margin
+191,27,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+2823,25,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+8996,39,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+94,28,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+9693,48,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+11387,56,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+12348,52,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+11799,45,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+20691,106,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+22272,437,ING800,shcal20,LWD-FOR,Swamp/Lake Margin
+1490,60,MAR2,shcal20,ATL-FOR,Lake
+3230,40,MAR2,shcal20,ATL-FOR,Lake
+2190,40,MAR2,shcal20,ATL-FOR,Lake
+3430,40,MAR2,shcal20,ATL-FOR,Lake
+3440,40,MAR2,shcal20,ATL-FOR,Lake
+2600,40,MAR2,shcal20,ATL-FOR,Lake
+4070,75,MAR2,shcal20,ATL-FOR,Lake
+2630,40,MAR2,shcal20,ATL-FOR,Lake
+3795,55,MAR2,shcal20,ATL-FOR,Lake
+430,40,NGUE1,shcal20,ATL-FOR,Lake
+990,40,NGUE1,shcal20,ATL-FOR,Lake
+1630,40,NGUE1,shcal20,ATL-FOR,Lake
+1600,35,NGUE1,shcal20,ATL-FOR,Lake
+1940,40,NGUE1,shcal20,ATL-FOR,Lake
+3310,40,NGUE1,shcal20,ATL-FOR,Lake
+2429,41,NGUE1,shcal20,ATL-FOR,Lake
+2510,40,NGUE1,shcal20,ATL-FOR,Lake
+2540,40,NGUE1,shcal20,ATL-FOR,Lake
+4460,40,NGUE1,shcal20,ATL-FOR,Lake
+4110,40,NGUE1,shcal20,ATL-FOR,Lake
+2341,49,NYABESSAN,intcal20,ATL-FOR,Swamp/Floodplain
+2383,66,NYABESSAN,intcal20,ATL-FOR,Swamp/Floodplain
+2318,42,NYABESSAN,intcal20,ATL-FOR,Swamp/Floodplain
+2820,70,NYABESSAN,intcal20,ATL-FOR,Swamp/Floodplain
+2933,44,NYABESSAN,intcal20,ATL-FOR,Swamp/Floodplain
+160,45,KAM [1],shcal20,ATL-FOR,Shallow Basin
+1430,40,KAM [1],shcal20,ATL-FOR,Shallow Basin
+520,110,KAM [1],shcal20,ATL-FOR,Shallow Basin
+1255,75,KAM [1],shcal20,ATL-FOR,Shallow Basin
+1410,70,KAM [1],shcal20,ATL-FOR,Shallow Basin
+565,170,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+345,60,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+835,25,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+1240,75,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+1760,70,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+2120,60,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+4450,30,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+6770,85,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+7630,95,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+7640,110,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+7570,35,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+8020,140,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+9140,50,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+8360,35,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+9930,40,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+10150,50,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+12450,40,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+13650,45,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+14750,85,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+11550,55,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+16850,85,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+14050,55,CEN-17.4,intcal20,LWD-FOR,Swamp/Floodplain
+2649,37,EKGkm4,intcal20,LWD-FOR,Swamp/Floodplain
+7652,42,EKGkm4,intcal20,LWD-FOR,Swamp/Floodplain
+8484,41,EKGkm4,intcal20,LWD-FOR,Swamp/Floodplain
+2547,37,EKGkm7-2015,intcal20,LWD-FOR,Swamp/Floodplain
+7600,38,EKGkm7-2015,intcal20,LWD-FOR,Swamp/Floodplain
+9091,39,EKGkm7-2015,intcal20,LWD-FOR,Swamp/Floodplain
+1571,35,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+1754,38,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+1720,35,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+702,36,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+4811,37,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+4251,37,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+6354,39,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+7662,39,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+7993,40,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+9340,41,EKGkm9,intcal20,LWD-FOR,Swamp/Floodplain
+8575,46,ITGkm6,intcal20,LWD-FOR,Swamp/Floodplain
