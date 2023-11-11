@@ -176,12 +176,33 @@ write.csv(combined_sites, "data/combined_14Craw.csv")
 #Now, we save a master mapping file (by site) and a master 14C file (by date).
 
 APD_rloc <- APD_locations[is.na(APD_all$yr14C) == FALSE, ]
-nt_rloc <- sapply(chron_names, function(x){
-  site_latlong[nt_read$sitename == x,]
+
+APD_rloc <- sapply(unique(APD_repair$site_name), function(x){
+  pull = APD_locations[row.names(APD_locations) == x,]
+  pull[1,]
 })
 
-combined_locations <- rbind(site_latlong, APD_locations) #How to filter by where we have results?
+APD_rloc = as.data.frame(t(APD_rloc))
+APD_nlst <- row.names(APD_rloc)
+APD_rloc <- apply(APD_rloc, 2, as.numeric)
+row.names(APD_rloc) = APD_nlst
 
+colnames(APD_rloc) = c("LON","LAT")
+
+nt_rloc <- sapply(unique(site_names), function(x){
+  pull = site_latlong[nt_read$sitename == x,]
+  pull[1,]
+})
+
+nt_rloc = as.data.frame(t(nt_rloc))
+colnames(nt_rloc) = c("LON","LAT")
+
+combined_locations <- rbind(nt_rloc, APD_rloc) #How to filter by where we have results?
+all_sitenames <- row.names(combined_locations)
+combined_locations <- apply(combined_locations, 2, as.numeric)
+row.names(combined_locations) <- all_sitenames
+
+write.csv(APD_rloc, "APD/APD_read.csv", row.names = TRUE)
 write.csv(combined_locations, "data/combined_14Clocations.csv")
 
 

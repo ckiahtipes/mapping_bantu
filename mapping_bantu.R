@@ -18,8 +18,6 @@ nt_sites <- read.csv("neotoma_all.csv", header = TRUE)
 
 read_sites <- read.csv("data/combined_sites.csv", header = TRUE)
 
-site_latlong <- data.frame(nt_sites$lat, nt_sites$lon, row.names = nt_sites$collectionunit)
-
 all_sites <- read_sites[read_sites$Database != "APD no Chron", ]
 
 all_latlong <- data.frame(all_sites$LONG, all_sites$LAT, row.names = all_sites$CODE)

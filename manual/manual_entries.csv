@@ -1,0 +1,110 @@
+﻿Material,Depth,14C age,Error,Lab no.,ref.,Record,Country,Region
+WOOD,12,834,35,AA78449,Kiahtipes 2016,FC000,Cent. Af. Rep.,BIC
+WOOD,42,2171,37,AA78448,Kiahtipes 2016,FC000,Cent. Af. Rep.,BIC
+WOOD,62,2362,39,AA78447,Kiahtipes 2016,FC000,Cent. Af. Rep.,BIC
+BULK?,0.25,770,100,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,2.05,2200,285,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,3.55,3690,315,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,6.75,6520,645,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,9.9,8690,475,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,10.8,9900,250,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,13.45,13120,965,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,13.75,13480,240,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,15.1,15470,100,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,16.65,17080,885,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,18.75,20420,1500,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+BULK?,21.05,24080,3500,NA,Maley and Brenac 1998,BM6,Cameroon,WCAF-M
+TOC,34,1770,30,Poz-12767,Brncic et al. 2009,MOPOBAI,R. Congo,BIC
+TOC,48,1445,35,Poz-14012,Brncic et al. 2009,MOPOBAI,R. Congo,BIC
+TOC,64,1470,30,Poz-12769,Brncic et al. 2009,MOPOBAI,R. Congo,BIC
+TOC,94,2360,40,Poz-12227,Brncic et al. 2009,MOPOBAI,R. Congo,BIC
+TOC,94,2530,35,Poz-12128,Brncic et al. 2009,MOPOBAI,R. Congo,BIC
+LOOK_UP,38,686,29,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,50,2011,29,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,68,1121,77,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,84,3755,32,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,98,5573,55,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,104,5040,35,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,120,12464,49,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,125,13286,55,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,132,17938,90,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,148,12222,51,BACKFILL,Kiahtipes & Schefuß 2018,ING100,DRCongo,BIC
+LOOK_UP,45,191,27,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+LOOK_UP,68,2823,25,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+LOOK_UP,76,8996,39,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+LOOK_UP,80,94,28,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+LOOK_UP,100,9693,48,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+LOOK_UP,136,11387,56,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+LOOK_UP,168,12348,52,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+LOOK_UP,180,11799,45,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+LOOK_UP,196,20691,106,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+LOOK_UP,205,22272,437,BACKFILL,Kiahtipes & Schefuß 2018,ING800,DRCongo,BIC
+BULK,25,1490,60,BACKFILL,Ngomanda et al. 2009,MAR2,Gabon,WCAF
+BULK,97,3230,40,BACKFILL,Ngomanda et al. 2009,MAR2,Gabon,WCAF
+BULK,148,2190,40,BACKFILL,Ngomanda et al. 2009,MAR2,Gabon,WCAF
+BULK,184,3430,40,BACKFILL,Ngomanda et al. 2009,MAR2,Gabon,WCAF
+BULK,221,3440,40,BACKFILL,Ngomanda et al. 2009,MAR2,Gabon,WCAF
+BULK,254,2600,40,BACKFILL,Ngomanda et al. 2009,MAR2,Gabon,WCAF
+BULK,292,4070,75,BACKFILL,Ngomanda et al. 2009,MAR2,Gabon,WCAF
+BULK,363,2630,40,BACKFILL,Ngomanda et al. 2009,MAR2,Gabon,WCAF
+Plant macrofossil,418,3795,55,BACKFILL,Ngomanda et al. 2009,MAR2,Gabon,WCAF
+BULK,35,430,40,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,75,990,40,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,105,1630,40,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,125,1600,35,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,153,1940,40,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,192,3310,40,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,257,2429,41,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,277,2510,40,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,337,2540,40,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,375,4460,40,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+BULK,413,4110,40,BACKFILL,Ngomanda et al. 2009,NGUE1,Gabon,WCAF
+Plant macrofossil,178,2341,49,BACKFILL,Ngomanda et al. 2009b,NYABESSAN,Cameroon,WCAF
+Leaf fragment,204,2383,66,BACKFILL,Ngomanda et al. 2009b,NYABESSAN,Cameroon,WCAF
+Plant macrofossil,240,2318,42,BACKFILL,Ngomanda et al. 2009b,NYABESSAN,Cameroon,WCAF
+Plant macrofossil,281,2820,70,BACKFILL,Ngomanda et al. 2009b,NYABESSAN,Cameroon,WCAF
+Plant macrofossil,354,2933,44,BACKFILL,Ngomanda et al. 2009b,NYABESSAN,Cameroon,WCAF
+BULK,20,160,45,BACKFILL,Ngomanda et al. 2005,KAM [1],Gabon,WCAF
+BULK,55,1430,40,BACKFILL,Ngomanda et al. 2005,KAM [1],Gabon,WCAF
+BULK,145,520,110,BACKFILL,Ngomanda et al. 2005,KAM [1],Gabon,WCAF
+BULK,272,1255,75,BACKFILL,Ngomanda et al. 2005,KAM [1],Gabon,WCAF
+BULK,373,1410,70,BACKFILL,Ngomanda et al. 2005,KAM [1],Gabon,WCAF
+Fine fraction (peat),0.5,565,170,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),12.8,345,60,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),53.6,835,25,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),94.4,1240,75,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),132.5,1760,70,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),151.5,2120,60,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),170.5,4450,30,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),190.5,6770,85,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),214.4,7630,95,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),235.6,7640,110,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),256.5,7570,35,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),296.5,8020,140,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),356.5,9140,50,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),396.5,8360,35,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),418.5,9930,40,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),460.5,10150,50,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),498.5,12450,40,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),540.5,13650,45,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),579.7,14750,85,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),596.4,11550,55,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),599.1,16850,85,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),625.2,14050,55,BACKFILL,Hawthorne et al. 2023,CEN-17.4,R. Congo,BIC
+Fine fraction (peat),57,2649,37,BACKFILL,Hawthorne et al. 2023,EKGkm4,R. Congo,BIC
+Fine fraction (peat),107,7652,42,BACKFILL,Hawthorne et al. 2023,EKGkm4,R. Congo,BIC
+Fine fraction (peat),147,8484,41,BACKFILL,Hawthorne et al. 2023,EKGkm4,R. Congo,BIC
+Fine fraction (peat),57,2547,37,BACKFILL,Hawthorne et al. 2023,EKGkm7-2015,R. Congo,BIC
+Fine fraction (peat),117,7600,38,BACKFILL,Hawthorne et al. 2023,EKGkm7-2015,R. Congo,BIC
+Fine fraction (peat),237,9091,39,BACKFILL,Hawthorne et al. 2023,EKGkm7-2015,R. Congo,BIC
+Fine fraction (peat),57,1571,35,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),67,1754,38,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),77,1720,35,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),87,702,36,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),97,4811,37,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),127,4251,37,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),167,6354,39,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),197,7662,39,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),237,7993,40,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),270,9340,41,BACKFILL,Hawthorne et al. 2023,EKGkm9,R. Congo,BIC
+Fine fraction (peat),190,8575,46,BACKFILL,Hawthorne et al. 2023,ITGkm6,R. Congo,BIC
