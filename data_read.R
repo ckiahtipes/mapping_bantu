@@ -1,4 +1,4 @@
-#R script for reading Neotoma and APD data and composing primary mapping datasets.
+#R script for reading and combining Neotoma, APD, and manual entry 14C/location data.
 
 library(neotoma2)
 library(lipdR)
