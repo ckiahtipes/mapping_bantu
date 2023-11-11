@@ -3,9 +3,20 @@
 library(neotoma2)
 library(lipdR)
 
-#Call sites, datasets, and downloads from neotoma.
+#Read main data file with locations, coll units, and database list.
 
 all_read <- read.csv("data/MB_data-read.csv", header = TRUE)
+
+#Read manual entries.
+
+manual <- read.csv("manual/manual_entries.csv", header = TRUE)
+
+#Set long/lat range.
+
+LAT_RANGE=c(-9,9)
+LON_RANGE=c(6,25)
+
+#Call sites, datasets, and downloads from neotoma.
 
 nt_sites <- get_sites(all_read$NEOTOMA_ID[all_read$Source == "Neotoma"])
 
@@ -37,18 +48,20 @@ nt_radiocarbon <- nt_chron[nt_chron$chroncontroltype == "Radiocarbon" & is.na(nt
 
 #Here we extract the names of the sites for which we returned chronologies.
 
-chron_ids <- unique(nt_radiocarbon$siteid)
+chron_ids <- unique(all_read$COLL_UNIT[all_read$Source == "Neotoma"])
 chron_names <- sapply(chron_ids, function(x){
-  n = all_read$Map.Locale[all_read$NEOTOMA_ID == x]
+  n = all_read$COLL_UNIT[all_read$COLL_UNIT == x]
   r = n[is.na(n) == FALSE]
   r = unique(r)
   r
 })
 
 site_names <- vector("character", length = nrow(nt_radiocarbon))
+nt_names <- all_read$Map.Locale[all_read$Source == "Neotoma"]
+nt_ids <- all_read$NEOTOMA_ID[all_read$Source == "Neotoma"]
 
-for(i in 1:length(chron_ids)){
-  site_names[nt_radiocarbon$siteid == chron_ids[i]] = chron_names[chron_ids[i]]
+for(i in 1:length(nt_names)){
+  site_names[nt_radiocarbon$siteid == nt_ids[i]] = nt_names[i]
 }
 
 nt_radiocarbon <- cbind(site_names, nt_radiocarbon)
@@ -163,9 +176,11 @@ for(i in 1:length(APD_14C)){
 
 APD_repair <- APD_all[is.na(APD_all$yr14C) == FALSE, ]
 
-all_14C <- as.numeric(c(APD_repair$yr14C,nt_radiocarbon$chroncontrolage))
-all_err <- as.numeric(c(APD_repair$error,nt_radiocarbon$agelimitolder - nt_radiocarbon$agelimityounger))
-all_nme <- c(APD_repair$site_name, nt_radiocarbon$site_names)
+all_14C <- as.numeric(c(APD_repair$yr14C,nt_radiocarbon$chroncontrolage, manual$X14C.age))
+all_err <- as.numeric(c(APD_repair$error,nt_radiocarbon$agelimitolder - nt_radiocarbon$agelimityounger, manual$Error))
+all_nme <- c(APD_repair$site_name, nt_radiocarbon$site_names, manual$Record)
+
+#Pull manual entries.
 
 combined_sites <- data.frame(all_14C, all_err, all_nme)
 
@@ -189,15 +204,20 @@ row.names(APD_rloc) = APD_nlst
 
 colnames(APD_rloc) = c("LON","LAT")
 
-nt_rloc <- sapply(unique(site_names), function(x){
-  pull = site_latlong[all_read$Map.Locale == x,]
+nt_rloc <- sapply(unique(chron_names), function(x){
+  pull = all_read[all_read$COLL_UNIT == x,c("LON", "LAT")]
   pull[1,]
 })
 
 nt_rloc = as.data.frame(t(nt_rloc))
 colnames(nt_rloc) = c("LON","LAT")
 
-combined_locations <- rbind(nt_rloc, APD_rloc) #How to filter by where we have results?
+mn_rloc = data.frame(all_read$LON[all_read$Source == "Manual entry"],
+                     all_read$LAT[all_read$Source == "Manual entry"],
+                     row.names = all_read$COLL_UNIT[all_read$Source == "Manual entry"])
+colnames(mn_rloc) = c("LON", "LAT")
+
+combined_locations <- rbind(nt_rloc, APD_rloc, mn_rloc) #How to filter by where we have results?
 all_sitenames <- row.names(combined_locations)
 combined_locations <- apply(combined_locations, 2, as.numeric)
 row.names(combined_locations) <- all_sitenames
