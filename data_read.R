@@ -177,7 +177,7 @@ for(i in 1:length(APD_14C)){
 APD_repair <- APD_all[is.na(APD_all$yr14C) == FALSE, ]
 
 all_14C <- as.numeric(c(APD_repair$yr14C,nt_radiocarbon$chroncontrolage, manual$X14C.age))
-all_err <- as.numeric(c(APD_repair$error,nt_radiocarbon$agelimitolder - nt_radiocarbon$agelimityounger, manual$Error))
+all_err <- as.numeric(c(APD_repair$error,(nt_radiocarbon$agelimitolder - nt_radiocarbon$agelimityounger)/2, manual$Error))
 all_nme <- c(APD_repair$site_name, nt_radiocarbon$site_names, manual$Record)
 
 #Pull manual entries.

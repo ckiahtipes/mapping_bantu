@@ -9,6 +9,9 @@ library(rcarbon)
 LAT_RANGE=c(-9,9)
 LON_RANGE=c(6,25)
 
+min_range = 100
+max_range = 11700
+
 #Call sites, datasets, and downloads from neotoma.
 
 all_read <- read.csv("data/MB_data-read.csv", header = TRUE)
@@ -26,7 +29,7 @@ all.bin <- binPrep(sites=C14_read$all_nme,
                   ages = C14_read$all_14C, 
                   h = 100)
 
-all.spd.bins <- spd(all.caldates, bins = all.bin, timeRange = c(11700,100))
+all.spd.bins <- spd(all.caldates, bins = all.bin, timeRange = c(max_range, min_range))
 
 plot(all.spd.bins)
 
@@ -34,7 +37,7 @@ plot(all.spd.bins)
 
 all.rdates <- sampleDates(all.caldates, bins = all.bin, nsim = 500, verbose = FALSE)
 
-all.ckde <- ckde(all.rdates, timeRange = c(11700, 100), bw = 200)
+all.ckde <- ckde(all.rdates, timeRange = c(max_range, min_range), bw = 200)
 
 plot(all.ckde)
 
@@ -42,7 +45,7 @@ plot(all.ckde)
 
 all.stack <- stackspd(x = all.caldates, 
                      group = C14_read$region, 
-                     timeRange = c(11700, 100), 
+                     timeRange = c(max_range, min_range), 
                      bins = all.bin, 
                      runm = 50, 
                      verbose = FALSE)
