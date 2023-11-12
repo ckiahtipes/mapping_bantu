@@ -104,7 +104,7 @@ seas_names=c("DJF","MAM","JJA","SON")
 ###Annual precip.
 par(mar=c(5,4,4,7)+0.1)
 prec.annual=sum(proj.prec[[1:12]])
-ann.iso=rasterToContour(prec.annual)
+ann.iso=rasterToContour(prec.annual, nlevels = 20)
 plot(0,0,xlim=LON_RANGE,ylim=LAT_RANGE,xlab="Lon",ylab="Lat",pch=NA)
 plot(prec.annual,col=tempcol(100),xlim=map_LON,ylim=map_LAT,add=TRUE)
 plot(ann.iso,add=TRUE,lty=3)

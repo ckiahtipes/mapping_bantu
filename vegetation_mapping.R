@@ -94,13 +94,13 @@ plot(EG.raster,col=ESAgrcp_col, add = TRUE, legend = FALSE, axes = FALSE, ann = 
 #plot(hw.new, col = hw_col(1000), add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 plot(cm.raster,col=cm_col(1000),add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 plot(ft.raster,col=ft_col,add=TRUE,legend=FALSE, axes = FALSE, ann = FALSE)
-map("world",add=TRUE,xlim=map_LON,ylim=map_LAT)
+map("world",add=TRUE,xlim=map_LON,ylim=map_LAT, lty = 2)
 
 #Contours!
 #ft.contour = rasterToContour(ft.raster, nlevels = 9)
-plot(ann.iso, lty = 3, lwd = 3, col = "#54524c",add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
+plot(ann.iso, lty = 1, lwd = 2, col = "#54524c",add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 
-points(all_latlong$LON, all_latlong$LAT, pch = 21, bg = "gold")
+points(all_latlong$LON, all_latlong$LAT, pch = 21, bg = "magenta")
 
 gc()
 
