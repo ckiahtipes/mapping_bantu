@@ -9,8 +9,8 @@ library(rcarbon)
 LAT_RANGE=c(-9,9)
 LON_RANGE=c(6,25)
 
-min_range = 100
-max_range = 11700
+min_range = 0
+max_range = 4000
 
 #Call sites, datasets, and downloads from neotoma.
 
