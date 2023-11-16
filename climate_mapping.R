@@ -149,3 +149,23 @@ barplot(t(prsl.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, ma
 barplot(t(tavg.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Avg. Temp. From WorldClim 2.1")
 par(mar=c(5, 4, 4, 2) + 0.1, mfrow = c(1,1))
 
+#Can we do something more interesting with WorlClim and site type?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

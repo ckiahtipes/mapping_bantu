@@ -10,7 +10,7 @@ LAT_RANGE=c(-9,9)
 LON_RANGE=c(6,25)
 
 min_range = 0
-max_range = 4000
+max_range = 11700
 
 #Call sites, datasets, and downloads from neotoma.
 

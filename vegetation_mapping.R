@@ -98,7 +98,7 @@ map("world",add=TRUE,xlim=map_LON,ylim=map_LAT, lty = 2)
 
 #Contours!
 #ft.contour = rasterToContour(ft.raster, nlevels = 9)
-plot(ann.iso, lty = 1, lwd = 2, col = "#54524c",add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
+#plot(ann.iso, lty = 1, lwd = 2, col = "#54524c",add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 
 points(all_latlong$LON, all_latlong$LAT, pch = 21, bg = "magenta")
 
