@@ -114,6 +114,11 @@ prec.data=extract(prec,all_locations)
 prec.data=as.data.frame(prec.data)
 row.names(prec.data)=row.names(all_locations)
 
+##Get elevations
+elev.data <- extract(region_SRTM, all_locations)
+elev.data <- as.data.frame(elev.data)
+row.names(elev.data) <- row.names(all_locations)
+
 #Basic mapping.
 
 ###MAPPING SETUP
@@ -174,7 +179,7 @@ plot(rivers, add = TRUE, col = "darkblue", lty = 1, lwd = 1)
 plot(lakes, add = TRUE, col = "lightblue")
 plot(ocean, add = TRUE, col = "lightblue")
 plot(region_SRTM, col = grey.colors(4024, start = 0.0001, end = 0.9999, gamma = 0.01, alpha = 0.3, rev = TRUE) ,add = TRUE, legend = FALSE)
-plot(ann.iso,add=TRUE,lty=1, lwd = 0.5)
+plot(ann.iso, add=TRUE, lty=1, lwd = 0.5)
 #map("world",add=TRUE,xlim=map_LON, lwd = 1, col = "black")
 points(all_read$LON, all_read$LAT, pch = 21, bg = "gold")
 title(main="Annual Precipitation, WorldClim 2.1")
@@ -205,6 +210,8 @@ gc()
 
 prec.data = prec.data[order(all_locations$LAT), ]
 tavg.data = tavg.data[order(all_locations$LAT), ]
+elev.ordr = elev.data[order(all_locations$LAT), ]
+elev.nmes = row.names(elev.data)[order(all_locations$LAT)]
 
 new_lat <- all_locations$LAT[order(all_locations$LAT)]
 new_lon <- all_locations$LON[order(all_locations$LAT)]
@@ -214,9 +221,9 @@ new_lon <- all_locations$LON[order(all_locations$LAT)]
 prsl.data = prec.data[new_lat > LAT_RANGE[1] & new_lat < 8 & new_lon > LON_RANGE[1] & new_lon < LON_RANGE[2], ]
 
 par(mar = c(5, 6, 4, 5) + 0.1, mfrow = c(1,2))
-barplot(t(prsl.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation From WorldClim 2.1")
+barplot(t(prsl.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation From WorldClim 2.1", col = heat.colors(12), lwd = 1)
 
-barplot(t(tavg.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Avg. Temp. From WorldClim 2.1")
+barplot(t(elev.ordr), horiz = TRUE, names.arg = elev.nmes, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Elevations", col = "lightblue", lwd = 1)
 par(mar=c(5, 4, 4, 2) + 0.1, mfrow = c(1,1))
 
 #Can we do something more interesting with WorlClim and site type?

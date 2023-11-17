@@ -3,8 +3,8 @@
 library(raster)
 library(maps)
 library(grDevices)
-
 library(sf)
+library(rnaturalearth)
 
 #Logical for saving picures
 
@@ -49,6 +49,65 @@ cm.raster <- raster(comb_path)
 ft.raster <- raster(fortypes_path)
 ET.raster <- raster(ESAtrsh_path)
 EG.raster <- raster(ESAgrcp_path)
+
+#We can also get some elevation data.
+
+if(!file.exists("srtm/tiled_region.tif")){
+  lon_grab <- c(rep(5, 4), rep(10, 4), rep(15, 4), rep(20, 4))
+  lat_grab <- c(rep(c(seq(-5, 10, 5)),4))
+  
+  srtm_tiles <- lapply(1:15, function(x){
+    array
+  })
+  
+  tile_name <- list(paste0('N',lon_grab,'W',lat_grab))
+  names(srtm_tiles) = tile_name
+  
+  for(i in 2:length(tile_name[[1]])){ #There's a tile of ocean and we need to leave it, so start at 2
+    srtm_tiles[i-1] = getData('SRTM', lon = lon_grab[i], lat = lat_grab[i], path = "srtm/")
+  }
+  
+  region_SRTM <- mosaic(srtm_tiles[[1]],
+                        srtm_tiles[[2]],
+                        srtm_tiles[[3]],
+                        srtm_tiles[[4]],
+                        srtm_tiles[[5]],
+                        srtm_tiles[[6]],
+                        srtm_tiles[[7]],
+                        srtm_tiles[[8]],
+                        srtm_tiles[[9]],
+                        srtm_tiles[[10]],
+                        srtm_tiles[[11]],
+                        srtm_tiles[[12]],
+                        srtm_tiles[[13]],
+                        srtm_tiles[[14]],
+                        srtm_tiles[[15]],
+                        fun = mean)
+  
+  writeRaster(region_SRTM, "srtm/tiled_region.tif")
+} else {
+  region_SRTM <- raster("srtm/tiled_region.tif")
+}
+
+#Get rivers, lakes, and ocean
+
+# download if needed
+if(!file.exists("ne_maps/ne_10m_lakes.cpg")){
+  ne_download(scale = 10, type = "rivers_lake_centerlines", category = "physical", 
+              destdir = "ne_maps/", load = FALSE) # major rivers
+  
+  ne_download(scale = 10, type = "lakes", category = "physical", 
+              destdir = "ne_maps/", load = FALSE) # major lakes
+  
+  ne_download(scale = 10, type = "ocean", category = "physical",
+              destdir = "ne_maps/", load = FALSE) # ocean
+  
+}
+
+rivers <- ne_load(scale = 10, type = "rivers_lake_centerlines", destdir = "ne_maps", returnclass = "sf")
+lakes <- ne_load(scale = 10, type = "lakes", destdir = "ne_maps", returnclass = "sf")
+ocean <- ne_load(scale = 10, type = "ocean", destdir = "ne_maps", returnclass = "sf")
+
 
 #Downsampling code below, but not really worth the time.
 
