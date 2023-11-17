@@ -4,6 +4,8 @@ library(raster)
 library(maps)
 library(grDevices)
 
+library(sf)
+
 #Logical for saving picures
 
 #Read file with collection units and site locations.
@@ -94,7 +96,12 @@ plot(EG.raster,col=ESAgrcp_col, add = TRUE, legend = FALSE, axes = FALSE, ann = 
 #plot(hw.new, col = hw_col(1000), add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 plot(cm.raster,col=cm_col(1000),add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 plot(ft.raster,col=ft_col,add=TRUE,legend=FALSE, axes = FALSE, ann = FALSE)
-map("world",add=TRUE,xlim=map_LON,ylim=map_LAT, lty = 2)
+plot(rivers, add = TRUE, col = "darkblue", lty = 1, lwd = 1)
+plot(lakes, add = TRUE, col = "lightblue")
+plot(ocean, add = TRUE, col = "lightblue")
+plot(region_SRTM, col = grey.colors(4024, start = 0.0001, end = 0.9999, gamma = 0.1, alpha = 0.3, rev = TRUE) ,add = TRUE, legend = FALSE)
+map("world",add=TRUE,xlim=map_LON,ylim=map_LAT, lty = 1)
+#tmap("rivers",add = TRUE)
 
 #Contours!
 #ft.contour = rasterToContour(ft.raster, nlevels = 9)
