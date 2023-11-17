@@ -162,7 +162,7 @@ plot(region_SRTM, col = grey.colors(4024, start = 0.0001, end = 0.9999, gamma = 
 map("world",add=TRUE,xlim=map_LON,ylim=map_LAT, lty = 1)
 #tmap("rivers",add = TRUE)
 
-legend(20, 9, 
+legend(23, 8, 
        c("ESA-tree", 
          "ESA-herb", 
          "ATL-eg. forests", 
