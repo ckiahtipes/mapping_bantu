@@ -132,8 +132,8 @@ LON_RANGE=c(6,24)
 
 tempcol=colorRampPalette(c("purple","blue","skyblue","green","lightgreen","yellow","orange","red","darkred"), alpha = FALSE) #This is a cool means of constructing gradient colors
 
-map_LAT=c(-9,9) #Defining a different mapped area from the latitude/longitude selection of the taxa
-map_LON=c(6,24) #Defining a different mapped area from the latitude/longitude selection of the taxa
+map_LAT=c(-10,10) #Defining a different mapped area from the latitude/longitude selection of the taxa
+map_LON=c(5,25) #Defining a different mapped area from the latitude/longitude selection of the taxa
 
 #map_LAT=c(15,35) #Defining a different mapped area from the latitude/longitude selection of the taxa
 #map_LON=c(-100,-70) #Defining a different mapped area from the latitude/longitude selection of the taxa
@@ -175,11 +175,12 @@ ann.iso=rasterToContour(prec.annual, nlevels = 20)
 
 plot(0,0,xlim=LON_RANGE,ylim=LAT_RANGE,xlab="Lon",ylab="Lat",pch=NA)
 plot(prec.annual,col = tempcol(100),xlim=map_LON,ylim=map_LAT,add=TRUE, legend = FALSE)
-plot(rivers, add = TRUE, col = "darkblue", lty = 1, lwd = 1)
-plot(lakes, add = TRUE, col = "lightblue")
-plot(ocean, add = TRUE, col = "lightblue")
-plot(region_SRTM, col = grey.colors(4024, start = 0.0001, end = 0.9999, gamma = 0.01, alpha = 0.3, rev = TRUE) ,add = TRUE, legend = FALSE)
 plot(ann.iso, add=TRUE, lty=1, lwd = 0.5)
+plot(rivers$geometry, add = TRUE, col = "darkblue", lty = 1, lwd = 1)
+plot(lakes$geometry, add = TRUE, col = "lightblue")
+plot(ocean$geometry, add = TRUE, col = "lightblue")
+plot(region_SRTM, col = grey.colors(4024, start = 0.0001, end = 0.9999, gamma = 0.01, alpha = 0.3, rev = TRUE) ,add = TRUE, legend = FALSE)
+
 #map("world",add=TRUE,xlim=map_LON, lwd = 1, col = "black")
 points(all_read$LON, all_read$LAT, pch = 21, bg = "gold")
 title(main="Annual Precipitation, WorldClim 2.1")
