@@ -139,7 +139,7 @@ map_LON=c(6,24) #Defining a different mapped area from the latitude/longitude se
 cm_col=colorRampPalette(c("#c5c5c500","#3d85c699"), alpha = TRUE)
 ft_col=colorRampPalette(c("#878cff","#d2fc9e","#748729"))
 
-ft_col=c("dark green", "blue", "green", "sky blue", "light green", "dark orange", "red", "brown", "brown")
+ft_col=c("dark green", "blue", "green", "skyblue", "lightgreen", "darkorange", "red", "brown", "brown")
 
 hw_col=colorRampPalette(c("#c5c5c500","#3d85c699"), alpha = TRUE)
 #pl_col=colorRampPalette(c(NA,"light blue"))
@@ -147,7 +147,7 @@ ESAtrsh_col=c(NA,"#6c9575")
 ESAgrcp_col=c(NA,"#ffd731")
 
 #Basic plotting method.
-
+par(mar=c(5,4,4,7)+0.1)
 plot(0, 0, pch=NA, xlim=map_LON, ylim=map_LAT, ylab="Lat", xlab="Long")
 
 plot(ET.raster,col=ESAtrsh_col, add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
@@ -161,6 +161,17 @@ plot(ocean$geometry, add = TRUE, col = "lightblue")
 plot(region_SRTM, col = grey.colors(4024, start = 0.0001, end = 0.9999, gamma = 0.1, alpha = 0.3, rev = TRUE) ,add = TRUE, legend = FALSE)
 map("world",add=TRUE,xlim=map_LON,ylim=map_LAT, lty = 1)
 #tmap("rivers",add = TRUE)
+
+legend(20, 9, 
+       c("ESA-tree", 
+         "ESA-herb", 
+         "ATL-eg. forests", 
+         "ATL-sd. forests",
+         "CB-sd. forests"),
+       pch = 22,
+       pt.bg = c("#6c9575", "#ffd731", "#3d85c699","blue", "green", "skyblue"))
+
+par(mar=c(5, 4, 4, 2) + 0.1)
 
 #Contours!
 #ft.contour = rasterToContour(ft.raster, nlevels = 9)

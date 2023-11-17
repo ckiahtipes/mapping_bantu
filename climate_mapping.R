@@ -174,7 +174,7 @@ prec.annual=sum(proj.prec[[1:12]])
 ann.iso=rasterToContour(prec.annual, nlevels = 20)
 
 plot(0,0,xlim=LON_RANGE,ylim=LAT_RANGE,xlab="Lon",ylab="Lat",pch=NA)
-plot(prec.annual,col = tempcol(100),xlim=map_LON,ylim=map_LAT,add=TRUE, legend = FALSE)
+plot(prec.annual,col = tempcol(100),xlim=map_LON,ylim=map_LAT,add=TRUE, legend = TRUE)
 plot(ann.iso, add=TRUE, lty=1, lwd = 0.5)
 plot(rivers$geometry, add = TRUE, col = "darkblue", lty = 1, lwd = 1)
 plot(lakes$geometry, add = TRUE, col = "lightblue")
