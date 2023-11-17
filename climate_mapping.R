@@ -124,7 +124,7 @@ row.names(elev.data) <- row.names(all_locations)
 ###MAPPING SETUP
 
 LAT_RANGE=c(-9,9)
-LON_RANGE=c(6,25)
+LON_RANGE=c(6,24)
 
 #LAT_RANGE=c(20,30)
 #LON_RANGE=c(-90,-80)
@@ -132,8 +132,8 @@ LON_RANGE=c(6,25)
 
 tempcol=colorRampPalette(c("purple","blue","skyblue","green","lightgreen","yellow","orange","red","darkred"), alpha = FALSE) #This is a cool means of constructing gradient colors
 
-map_LAT=c(-10,10) #Defining a different mapped area from the latitude/longitude selection of the taxa
-map_LON=c(5,26) #Defining a different mapped area from the latitude/longitude selection of the taxa
+map_LAT=c(-9,9) #Defining a different mapped area from the latitude/longitude selection of the taxa
+map_LON=c(6,24) #Defining a different mapped area from the latitude/longitude selection of the taxa
 
 #map_LAT=c(15,35) #Defining a different mapped area from the latitude/longitude selection of the taxa
 #map_LON=c(-100,-70) #Defining a different mapped area from the latitude/longitude selection of the taxa

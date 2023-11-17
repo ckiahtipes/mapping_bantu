@@ -132,7 +132,7 @@ LAT_RANGE=c(-10,15)
 LON_RANGE=c(-3,30)
 
 map_LAT=c(-9,9) #Defining a different mapped area from the latitude/longitude selection of the taxa
-map_LON=c(6,25) #Defining a different mapped area from the latitude/longitude selection of the taxa
+map_LON=c(6,24) #Defining a different mapped area from the latitude/longitude selection of the taxa
 
 #Need to assign colors to make these plot properly.
 
