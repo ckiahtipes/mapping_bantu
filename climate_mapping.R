@@ -7,6 +7,10 @@ library(grDevices)
 library(sf)
 library(rnaturalearth)
 
+#Plotting and saving controls.
+
+save_figs = FALSE
+
 #Start with locations of cores, extract climate and vegetation data.
 
 all_read <- read.csv("data/MB_data-read.csv", header = TRUE)
@@ -171,10 +175,13 @@ seas_names=c("DJF","MAM","JJA","SON")
 prec.annual=sum(proj.prec[[1:12]])
 ann.iso=rasterToContour(prec.annual, nlevels = 20)
 
-#Plotting method
-setEPS()
-#pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
-tiff("Figure-2_ann-precip.tiff", height = 1900, width = 2400, res = 300)
+if(save_figs == TRUE){
+  #Plotting method
+  setEPS()
+  #pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
+  tiff("Figure-2_ann-precip.tiff", height = 1900, width = 2400, res = 300)
+}
+
 par(mar=c(5,4,4,10)+0.1)
 
 plot(0,0,xlim=LON_RANGE,ylim=LAT_RANGE,pch=NA, axes = FALSE, ann = FALSE)
@@ -203,17 +210,20 @@ title(main="Avg. Annual Precipitation in mm/yr, WorldClim 2.1",
 
 arrows(8, -3.5, 8, -4.5, lwd = 3, angle = 40, code = 1, length = 0.05)
 text(7.5,-4, "N", cex = 1.5)
-par(mar=c(5, 4, 4, 2) + 0.1)
+gc()
+if(save_figs == TRUE){
+  dev.off()
+}
 
 par(mar=c(5, 4, 4, 2) + 0.1)
-gc()
-dev.off()
 
 #Map seasonal precipitation.
+if(save_figs == TRUE){
+  setEPS()
+  #pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
+  tiff("Figure-3_seas-precip.tiff", height = 1900, width = 2400, res = 300)
+}
 
-setEPS()
-#pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
-tiff("Figure-3_seas-precip.tiff", height = 1900, width = 2400, res = 300)
 par(mar=c(3,2,1,5)+0.1, mfrow = c(2,2))
 for(i in 1:length(seasonal)){
   ses.iso = rasterToContour(seasonal[[i]])
@@ -232,9 +242,13 @@ for(i in 1:length(seasonal)){
   arrows(8, -3.5, 8, -4.5, lwd = 3, angle = 40, code = 1, length = 0.05)
   #text(7.5,-4, "N", cex = 1.5)
 }
+
+if(save_figs == TRUE){
+  dev.off()
+}
 par(mar=c(5, 4, 4, 2) + 0.1, mfrow = c(1,1))
 gc()
-dev.off()
+
 #Let's work with some climate and precipitation data.
 
 #Order by latitutde
@@ -250,16 +264,21 @@ new_lon <- all_locations$LON[order(all_locations$LAT)]
 #filter by lat/long
 
 prsl.data = prec.data[new_lat > LAT_RANGE[1] & new_lat < 8 & new_lon > LON_RANGE[1] & new_lon < LON_RANGE[2], ]
-setEPS()
-#pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
-tiff("Figure-4_sites.tiff", height = 1900, width = 2400, res = 300)
+if(save_figs == TRUE){
+  setEPS()
+  #pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
+  tiff("Figure-4_sites.tiff", height = 1900, width = 2400, res = 300)
+}
+
 par(mar = c(5, 6, 4, 5) + 0.1, mfrow = c(1,2))
 barplot(t(prsl.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation From WorldClim 2.1", col = heat.colors(12), lwd = 1)
 
 barplot(t(elev.ordr), horiz = TRUE, names.arg = elev.nmes, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Elevations", col = "lightblue", lwd = 1)
 par(mar=c(5, 4, 4, 2) + 0.1, mfrow = c(1,1))
 gc()
-dev.off()
+if(save_figs == TRUE){
+  dev.off()
+}
 #Can we do something more interesting with WorlClim and site type?
 
 #wBio <- getData("worldclim", var = "bio", res = 2.5)

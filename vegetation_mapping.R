@@ -6,7 +6,9 @@ library(grDevices)
 library(sf)
 library(rnaturalearth)
 
-#Logical for saving picures
+#Logical for saving figures
+
+save_figs = FALSE
 
 #Read file with collection units and site locations.
 
@@ -147,9 +149,12 @@ ESAtrsh_col=c(NA,"#6c9575")
 ESAgrcp_col=c(NA,"#ffd731")
 
 #Basic plotting method.
-setEPS()
-#pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
-tiff("Figure-1_vegmap.tiff", height = 1900, width = 2400, res = 300)
+if(save_figs == TRUE){
+  setEPS()
+  #pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
+  tiff("Figure-1_vegmap.tiff", height = 1900, width = 2400, res = 300)
+}
+
 par(mar=c(5,4,4,3)+0.1)
 plot(0, 0, pch=NA, axes = FALSE, ann = FALSE, xlim=map_LON, ylim=map_LAT)
 
@@ -235,9 +240,12 @@ title(main = "Vegetation Type Composite for Central-West African Rain Forests",
       ylab = "LAT",
       cex.lab = 0.8)
 
+if(save_figs == TRUE){
+  dev.off()
+}
 par(mar=c(5, 4, 4, 2) + 0.1)
 gc()
-dev.off()
+
 
 
 
