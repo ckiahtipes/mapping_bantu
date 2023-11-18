@@ -132,14 +132,14 @@ LAT_RANGE=c(-10,15)
 LON_RANGE=c(-3,30)
 
 map_LAT=c(-9,9) #Defining a different mapped area from the latitude/longitude selection of the taxa
-map_LON=c(6,24) #Defining a different mapped area from the latitude/longitude selection of the taxa
+map_LON=c(6,30) #Defining a different mapped area from the latitude/longitude selection of the taxa
 
 #Need to assign colors to make these plot properly.
 
 cm_col=colorRampPalette(c("#c5c5c500","#3d85c699"), alpha = TRUE)
-ft_col=colorRampPalette(c("#878cff","#d2fc9e","#748729"))
+#ft_col=colorRampPalette(c("#878cff","#d2fc9e","#748729"))
 
-ft_col=c("dark green", "blue", "green", "skyblue", "lightgreen", "darkorange", "red", "brown", "brown")
+ft_col=c("dark green", "blue", "green", "skyblue", "lightgreen", "darkorange", "red", "brown", "purple")
 
 hw_col=colorRampPalette(c("#c5c5c500","#3d85c699"), alpha = TRUE)
 #pl_col=colorRampPalette(c(NA,"light blue"))
@@ -147,8 +147,11 @@ ESAtrsh_col=c(NA,"#6c9575")
 ESAgrcp_col=c(NA,"#ffd731")
 
 #Basic plotting method.
-par(mar=c(5,4,4,7)+0.1)
-plot(0, 0, pch=NA, xlim=map_LON, ylim=map_LAT, ylab="Lat", xlab="Long")
+setEPS()
+#pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
+tiff("Figure-1_vegmap.tiff", height = 1900, width = 2400, res = 300)
+par(mar=c(5,4,4,3)+0.1)
+plot(0, 0, pch=NA, axes = FALSE, ann = FALSE, xlim=map_LON, ylim=map_LAT)
 
 plot(ET.raster,col=ESAtrsh_col, add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 plot(EG.raster,col=ESAgrcp_col, add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
@@ -162,24 +165,79 @@ plot(region_SRTM, col = grey.colors(4024, start = 0.0001, end = 0.9999, gamma = 
 map("world",add=TRUE,xlim=map_LON,ylim=map_LAT, lty = 1)
 #tmap("rivers",add = TRUE)
 
-legend(23, 8, 
-       c("ESA-tree", 
+legend(c(25,32), c(10,-10),
+       bty = "o",
+       box.lwd = NA,
+       c(NA,
+         NA,
+         NA,
+         "ESA-tree", 
          "ESA-herb", 
-         "ATL-eg. forests", 
-         "ATL-sd. forests",
-         "CB-sd. forests"),
-       pch = 22,
-       pt.bg = c("#6c9575", "#ffd731", "#3d85c699","blue", "green", "skyblue"))
+         "EVG forest", 
+         "S-D sw. frag",
+         "EVG-SD mix",
+         "S-D west Af",
+         "S-D sest Af",
+         "Decid n. frag",
+         "S-D nest Af",
+         "2ndry S-D se Af",
+         "2ndry S-D ne Af",
+         "ICB Hydro Complex",
+         NA,
+         NA,
+         "Pollen Records",
+         "Rivers",
+         "Lakes",
+         "Borders"),
+       pch = c(NA, NA, NA, rep(22, 12), NA, NA, 21, NA, 22),
+       pt.bg = c(NA,
+                 NA,
+                 NA,
+                 "#6c9575",
+                 "#ffd731",
+                 "dark green",
+                 "blue",
+                 "green",
+                 "skyblue",
+                 "lightgreen",
+                 "darkorange",
+                 "red",
+                 "brown",
+                 "purple",
+                 "#3d85c699",
+                 NA,
+                 NA,
+                 "magenta",
+                 NA,
+                 "lightblue",
+                 NA),
+       lty = c(rep(NA, 18), 1, NA, 1),
+       col = c(rep("black", 18), "blue", "black", "black"),
+       cex = 0.7)
 
-par(mar=c(5, 4, 4, 2) + 0.1)
+
 
 #Contours!
 #ft.contour = rasterToContour(ft.raster, nlevels = 9)
 #plot(ann.iso, lty = 1, lwd = 2, col = "#54524c",add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 
-points(all_latlong$LON, all_latlong$LAT, pch = 21, bg = "magenta")
+arrows(8, -3.5, 8, -4.5, lwd = 3, angle = 40, code = 1, length = 0.05)
+text(7.5,-4, "N", cex = 1.5)
 
+points(all_latlong$LON, all_latlong$LAT, pch = 21, bg = "magenta")
+axis(1, at = seq(5, 20, 5), labels = seq(5, 20, 5), cex.axis = 0.8)
+axis(1, at = c(20,35), labels = NA, lwd.ticks = 0)
+axis(2, at = seq(-10, 10, 5), labels = seq(-10, 10, 5), cex.axis = 0.8)
+axis(3, at= c(2, 35), labels = NA, lwd.ticks = 0)
+axis(4, at = seq(-10, 10, 5), labels = NA, lwd.ticks = 0)
+title(main = "Vegetation Type Composite for Central-West African Rain Forests",
+      xlab = "LON",
+      ylab = "LAT",
+      cex.lab = 0.8)
+
+par(mar=c(5, 4, 4, 2) + 0.1)
 gc()
+dev.off()
 
 
 
