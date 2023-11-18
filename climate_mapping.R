@@ -167,13 +167,17 @@ seasonal=array(c(DJF.prec,MAM.prec,JJA.prec,SON.prec))
 #seasonal=as.raster(seasonal)
 names(seasonal)=c("DJF.prec","MAM.prec","JJA.prec","SON.prec")
 seas_names=c("DJF","MAM","JJA","SON")
-
 ###Annual precip.
-par(mar=c(5,4,4,7)+0.1)
 prec.annual=sum(proj.prec[[1:12]])
 ann.iso=rasterToContour(prec.annual, nlevels = 20)
 
-plot(0,0,xlim=LON_RANGE,ylim=LAT_RANGE,xlab="Lon",ylab="Lat",pch=NA)
+#Plotting method
+setEPS()
+#pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
+tiff("Figure-2_ann-precip.tiff", height = 1900, width = 2400, res = 300)
+par(mar=c(5,4,4,10)+0.1)
+
+plot(0,0,xlim=LON_RANGE,ylim=LAT_RANGE,pch=NA, axes = FALSE, ann = FALSE)
 plot(prec.annual,col = tempcol(100),xlim=map_LON,ylim=map_LAT,add=TRUE, legend = TRUE)
 plot(ann.iso, add=TRUE, lty=1, lwd = 0.5)
 plot(rivers$geometry, add = TRUE, col = "darkblue", lty = 1, lwd = 1)
@@ -183,28 +187,54 @@ plot(region_SRTM, col = grey.colors(4024, start = 0.0001, end = 0.9999, gamma = 
 
 #map("world",add=TRUE,xlim=map_LON, lwd = 1, col = "black")
 points(all_read$LON, all_read$LAT, pch = 21, bg = "gold")
-title(main="Annual Precipitation, WorldClim 2.1")
 
 
+axis(1, at = seq(5, 20, 5), labels = seq(5, 20, 5), cex.axis = 0.8)
+axis(1, at = c(20,35), labels = NA, lwd.ticks = 0)
+axis(2, at = seq(-10, 10, 5), labels = seq(-10, 10, 5), cex.axis = 0.8)
+axis(3, at= c(2, 35), labels = NA, lwd.ticks = 0)
+axis(4, at = seq(-10, 10, 5), labels = NA, lwd.ticks = 0)
+title(main="Avg. Annual Precipitation in mm/yr, WorldClim 2.1",
+      xlab = "LON",
+      ylab = "LAT",
+      cex.lab = 0.8)
+
+
+
+arrows(8, -3.5, 8, -4.5, lwd = 3, angle = 40, code = 1, length = 0.05)
+text(7.5,-4, "N", cex = 1.5)
 par(mar=c(5, 4, 4, 2) + 0.1)
 
+par(mar=c(5, 4, 4, 2) + 0.1)
 gc()
+dev.off()
 
 #Map seasonal precipitation.
-par(mar=c(5,4,4,7)+0.1, mfrow = c(2,2))
+
+setEPS()
+#pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
+tiff("Figure-3_seas-precip.tiff", height = 1900, width = 2400, res = 300)
+par(mar=c(3,2,1,5)+0.1, mfrow = c(2,2))
 for(i in 1:length(seasonal)){
   ses.iso = rasterToContour(seasonal[[i]])
-  plot(0, 0, xlim = LON_RANGE, ylim = LAT_RANGE, xlab = "Lon", ylab = "Lat", pch = NA)
+  plot(0, 0, xlim = LON_RANGE, ylim = LAT_RANGE, axes = FALSE, ann = FALSE, pch = NA)
   plot(seasonal[[i]], col = tempcol(100), xlim = map_LON, ylim = map_LAT, add = TRUE)
   plot(region_SRTM, col = grey.colors(4024, start = 0.0001, end = 0.9999, gamma = 0.01, alpha = 0.4, rev = TRUE) ,add = TRUE, legend = FALSE)
   plot(ses.iso, add = TRUE, lty = 3)
   map("world", add = TRUE, xlim = map_LON, ylim = map_LAT)
   points(all_read$LON, all_read$LAT, pch = 21, bg = "gold")
   title(main = paste0(seas_names[i], " Precip in mm"))
+  axis(1, at = seq(5, 20, 5), labels = seq(5, 20, 5), cex.axis = 0.8)
+  axis(1, at = c(20,35), labels = NA, lwd.ticks = 0)
+  axis(2, at = seq(-10, 10, 5), labels = seq(-10, 10, 5), cex.axis = 0.8)
+  axis(3, at= c(2, 35), labels = NA, lwd.ticks = 0)
+  axis(4, at = seq(-10, 10, 5), labels = NA, lwd.ticks = 0)
+  arrows(8, -3.5, 8, -4.5, lwd = 3, angle = 40, code = 1, length = 0.05)
+  #text(7.5,-4, "N", cex = 1.5)
 }
 par(mar=c(5, 4, 4, 2) + 0.1, mfrow = c(1,1))
-
 gc()
+dev.off()
 #Let's work with some climate and precipitation data.
 
 #Order by latitutde
@@ -220,13 +250,16 @@ new_lon <- all_locations$LON[order(all_locations$LAT)]
 #filter by lat/long
 
 prsl.data = prec.data[new_lat > LAT_RANGE[1] & new_lat < 8 & new_lon > LON_RANGE[1] & new_lon < LON_RANGE[2], ]
-
+setEPS()
+#pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
+tiff("Figure-4_sites.tiff", height = 1900, width = 2400, res = 300)
 par(mar = c(5, 6, 4, 5) + 0.1, mfrow = c(1,2))
 barplot(t(prsl.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation From WorldClim 2.1", col = heat.colors(12), lwd = 1)
 
 barplot(t(elev.ordr), horiz = TRUE, names.arg = elev.nmes, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Elevations", col = "lightblue", lwd = 1)
 par(mar=c(5, 4, 4, 2) + 0.1, mfrow = c(1,1))
-
+gc()
+dev.off()
 #Can we do something more interesting with WorlClim and site type?
 
 #wBio <- getData("worldclim", var = "bio", res = 2.5)
