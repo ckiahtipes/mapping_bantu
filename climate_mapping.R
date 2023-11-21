@@ -328,7 +328,7 @@ if(save_figs == TRUE){
 }
 
 par(mar = c(5, 6, 4, 5) + 0.1, mfrow = c(1,2))
-barplot(t(prsl.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation From WorldClim 2.1", col = heat.colors(12), lwd = 1)
+barplot(t(prsl.data), horiz = TRUE, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Monthly Precipitation", col = heat.colors(12), lwd = 1)
 
 barplot(t(elev.ordr), horiz = TRUE, names.arg = elev.nmes, las = 1, cex.names = 0.7, cex.axis = 0.9, main = "Elevations", col = "lightblue", lwd = 1)
 par(mar=c(5, 4, 4, 2) + 0.1, mfrow = c(1,1))

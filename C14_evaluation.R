@@ -47,7 +47,7 @@ if(save_figs == TRUE){
 }
 #pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
 
-plot(all.ckde, col = "darkgreen")
+plot(all.ckde, fill.col = "#91c57b")
 title(main = "KDE for all 14C dates")
 
 if(save_figs == TRUE){
@@ -72,7 +72,7 @@ if(save_figs){
 #pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
 
 par(mfrow = c(2,1), mar = c(4,4,2,1)+0.1)
-plot(all.stack, type = "stacked", legend = TRUE, cex.axis = 0.7)
+plot(all.stack, type = "stacked", legend = TRUE, cex.axis = 0.7, main = "SPDs of 14C Dates by Region")
 #plot(all.stack, type = "lines")
 plot(all.stack, type = "multipanel", legend = FALSE, cex.axis = 0.7)
 #plot(all.stack, type = "proportion", legend = FALSE)
