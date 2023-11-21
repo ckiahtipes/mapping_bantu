@@ -299,8 +299,62 @@ if(save_figs == TRUE){
 #plot(seas_10, col = tempcol(100), slim = map_LONG, ylim = map_LAT, add = TRUE)
 #
 
+#Testing plotting of labels
 
+arrows(all_locations[1,1], all_locations[1,2], 9, 4, length = 0)
 
+label_lat <- c(3.5, #Niger River Delta
+               2.5, #Nyabessan
+               3, #Ossa
+               6.5, #Mbaodang
+               6, #Barombi Mbo
+               7, #Monoun 
+               7, #Bambili
+               7.5, #Mbi
+               8, #Tizong
+               8.5, #Mbalang
+               -4, #Kamalete
+               -3, #Nguene
+               -0.5, #Mariador
+               -6.5, #Songolo
+               -6.75, #Coraf
+               -6.5, #Kitina
+               -6.5, #Sinnda
+               -6.25, #Ngamakala pond
+               -5.5, #Bois de Bilanko
+               1, #Ekolongouma
+               1.5, #Goualougo
+               2, #Bemba yanga
+               2.5, # Mopo Bai
+               5.5, #FC400
+               -3) #ING100
 
+label_lon <- c(5.5, #Niger River Fan
+               7.5, #Nyabessan
+               8.5, #Ossa
+               8, #Mbaodang
+               8.5, #Barombi Mbo
+               10.5, #Monoun
+               9, #Bambili
+               9.5, #Mbi
+               12.5, #Tizong
+               13, #Mbalang
+               9.5, #Kamalete
+               8.5, #Nguene
+               8, #Mariador
+               11, #Songolo
+               10, #Coraf
+               10.5, #Kitina
+               13, #Sinnda
+               15, #Ngamakala
+               17, #Bois de bilanko
+               19, #Ekolongouma
+               18.5, #Goualougo
+               18.5, #Bemba yanga
+               17.5, #Mopo Bai
+               16.5, #FC400
+               19) #ING100
 
+label_plots <- data.frame(label_lon, label_lat)
 
+arrows(label_lon, label_lat, all_locations$LON, all_locations$LAT, length = 0)
