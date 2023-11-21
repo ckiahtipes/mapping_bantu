@@ -8,7 +8,7 @@ library(rnaturalearth)
 
 #Logical for saving figures
 
-save_figs = FALSE
+save_figs = TRUE
 
 #Read file with collection units and site locations.
 
@@ -212,7 +212,7 @@ legend(c(25,32), c(10,-10),
                  "#3d85c699",
                  NA,
                  NA,
-                 "magenta",
+                 "gold",
                  NA,
                  "lightblue",
                  NA),
@@ -226,10 +226,10 @@ legend(c(25,32), c(10,-10),
 #ft.contour = rasterToContour(ft.raster, nlevels = 9)
 #plot(ann.iso, lty = 1, lwd = 2, col = "#54524c",add = TRUE, legend = FALSE, axes = FALSE, ann = FALSE)
 
-arrows(8, -3.5, 8, -4.5, lwd = 3, angle = 40, code = 1, length = 0.05)
-text(7.5,-4, "N", cex = 1.5)
+arrows(8, -6.5, 8, -7.5, lwd = 3, angle = 40, code = 1, length = 0.05)
+text(7.5,-7, "N", cex = 1.5)
 
-points(all_latlong$LON, all_latlong$LAT, pch = 21, bg = "magenta")
+points(all_latlong$LON, all_latlong$LAT, pch = 21, bg = "gold")
 axis(1, at = seq(5, 20, 5), labels = seq(5, 20, 5), cex.axis = 0.8)
 axis(1, at = c(20,35), labels = NA, lwd.ticks = 0)
 axis(2, at = seq(-10, 10, 5), labels = seq(-10, 10, 5), cex.axis = 0.8)
@@ -239,6 +239,65 @@ title(main = "Vegetation Type Composite for Central-West African Rain Forests",
       xlab = "LON",
       ylab = "LAT",
       cex.lab = 0.8)
+
+label_lat <- c(3.5, #Niger River Delta
+               1.5, #Nyabessan
+               3, #Ossa
+               6, #Mbaodang
+               7, #Barombi Mbo
+               7, #Monoun 
+               7, #Bambili
+               8, #Mbi
+               9, #Tizong
+               8, #Mbalang
+               -4, #Kamalete
+               -3, #Nguene
+               -0.5, #Mariador
+               -6.5, #Songolo
+               -6.75, #Coraf
+               -5, #Kitina
+               -6.5, #Sinnda
+               -6.25, #Ngamakala pond
+               -5.5, #Bois de Bilanko
+               1, #Ekolongouma
+               1.75, #Goualougo
+               2.75, #Bemba yanga
+               3, # Mopo Bai
+               5.5, #FC400
+               -3) #ING100
+
+label_lon <- c(6.5, #Niger River Fan
+               8.5, #Nyabessan
+               8.5, #Ossa
+               7, #Mbaodang
+               7.75, #Barombi Mbo
+               11, #Monoun
+               9.25, #Bambili
+               9.5, #Mbi
+               13, #Tizong
+               12.5, #Mbalang
+               9.5, #Kamalete
+               8.5, #Nguene
+               8, #Mariador
+               11, #Songolo
+               10, #Coraf
+               10.5, #Kitina
+               13, #Sinnda
+               15, #Ngamakala
+               17, #Bois de bilanko
+               19, #Ekolongouma
+               18.25, #Goualougo
+               18.75, #Bemba yanga
+               17.5, #Mopo Bai
+               16.5, #FC400
+               19) #ING100
+
+label_plots <- data.frame(label_lon, label_lat)
+
+arrows(label_plots$label_lon, label_plots$label_lat, all_locations$LON, all_locations$LAT, length = 0)
+points(label_plots$label_lon, label_plots$label_lat, pch = 21, bg = "gold", cex = 3)
+points(all_read$LON, all_read$LAT, pch = 21, bg = "gold")
+text(label_lon, label_lat, labels= c(1:nrow(label_plots)), cex = 0.8)
 
 if(save_figs == TRUE){
   dev.off()

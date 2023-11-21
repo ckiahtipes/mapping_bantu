@@ -12,7 +12,7 @@ LON_RANGE=c(6,25)
 min_range = 0
 max_range = 11700
 
-save_figs = FALSE
+save_figs = TRUE
 
 #Call sites, datasets, and downloads from neotoma.
 
@@ -47,7 +47,8 @@ if(save_figs == TRUE){
 }
 #pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
 
-plot(all.ckde)
+plot(all.ckde, col = "darkgreen")
+title(main = "KDE for all 14C dates")
 
 if(save_figs == TRUE){
   dev.off()
@@ -61,6 +62,8 @@ all.stack <- stackspd(x = all.caldates,
                      runm = 50, 
                      verbose = FALSE)
 
+
+
 #Make fancy plot from Crema and Bevan (2021)
 if(save_figs){
   setEPS()
@@ -68,13 +71,13 @@ if(save_figs){
 }
 #pdf("Figure-1_vegmap.pdf", height = 5, width = 8)
 
-par(mfrow = c(2,2))
-plot(all.stack, type = "stacked", legend = FALSE)
-plot(all.stack, type = "lines")
-plot(all.stack, type = "multipanel", legend = FALSE )
-plot(all.stack, type = "proportion", legend = FALSE)
+par(mfrow = c(2,1), mar = c(4,4,2,1)+0.1)
+plot(all.stack, type = "stacked", legend = TRUE, cex.axis = 0.7)
+#plot(all.stack, type = "lines")
+plot(all.stack, type = "multipanel", legend = FALSE, cex.axis = 0.7)
+#plot(all.stack, type = "proportion", legend = FALSE)
 par(mfrow = c(1,1))
-
+par(mar=c(5, 4, 4, 2) + 0.1)
 if(save_figs == TRUE){
   dev.off()
 }
