@@ -34,10 +34,10 @@ colnames(all_locations) = c("LON", "LAT")
 
 #Pull and extract spatial data.
 
-tavg.files=list.files("worldclim/wc2.1_30s_tavg/",".tif",full.names=TRUE)
+tavg.files=list.files("worldclim/wc2.1_10m_tavg/",".tif",full.names=TRUE)
 tavg=stack(tavg.files)
 
-prec.files=list.files("worldclim/wc2.1_30s_prec/",".tif",full.names=TRUE)
+prec.files=list.files("worldclim/wc2.1_10m_prec/",".tif",full.names=TRUE)
 prec=stack(prec.files)
 
 month=c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
