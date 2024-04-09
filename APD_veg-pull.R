@@ -55,6 +55,16 @@ APD_depths <- lapply(lpd.read, function(x){
   x$paleoData[[1]]$measurementTable[[1]]$'Depth (cm)'$values
 })
 
+#Random errors in depths, some entries include "depth (cm)" in the "values" vector. Need to clean up.
+
+for(i in 1:length(APD_depths)){
+  if(is.character(APD_depths[[i]]) == TRUE){ #Look for characters
+    APD_depths[[i]] = as.numeric(APD_depths[[i]][2:length(APD_depths[[i]])]) #Cut character sting and make numeric
+  } else {
+    
+  }
+}
+
 #Write into new array.
 
 APD_array <- lapply(1:length(lpd.read), function(x){
@@ -96,9 +106,6 @@ for(i in 1:length(lpd.read)){
 
 
 
-#This pulls depths from a given record
-
-lpd.read$MBI$paleoData[[1]]$measurementTable[[1]]$`Depth (cm)`$values
 
 
 
@@ -111,101 +118,3 @@ lpd.read$MBI$paleoData[[1]]$measurementTable[[1]]$`Depth (cm)`$values
 
 
 
-
-
-
-######OLD CODE CHUNK BELOW######
-
-lpd.files <- list.files("APD/",".lpd",full.names = TRUE)
-
-lpd.read <- readLipd(path = "APD/")
-
-#We can read and navigate these with some careful use of lapply.
-
-APD_names <- names(lpd.read) #Get all the record names.
-
-#Let's get the lat/longs and filter.
-
-APD_lat <- sapply(lpd.read, function(x){
-  x$geo$latitude
-})
-
-APD_lon <- sapply(lpd.read, function(x){
-  x$geo$longitude
-})
-
-APD_locations <- data.frame(as.numeric(APD_lon), as.numeric(APD_lat), row.names = names(APD_lon))
-colnames(APD_locations) <- c("APD_lon", "APD_lat")
-
-#Filter by mapping locations.
-
-APD_sel <- APD_names[APD_locations$APD_lon > LON_RANGE[1] &
-                       APD_locations$APD_lon < LON_RANGE[2] &
-                       APD_locations$APD_lat > LAT_RANGE[1] & 
-                       APD_locations$APD_lat < 8]
-
-array_guide <- c(1:length(APD_names))[APD_locations$APD_lon > LON_RANGE[1] &
-                                        APD_locations$APD_lon < LON_RANGE[2] &
-                                        APD_locations$APD_lat > LAT_RANGE[1] & 
-                                        APD_locations$APD_lat < 8]
-
-#Making matrix of 14C results for all these cores.
-
-APD_14C <- lapply(1:length(APD_sel), function(x){
-  matrix()
-})
-
-chron_guide <- sapply(lpd.read, function(x){
-  length(x$chronData)
-})
-
-for(i in 1:length(APD_sel)){ #How hard is it to add retrieval of the lab #s?
-  if(i == 1){
-    APD_noread <- vector("character") #Create object to put no read results into. 
-  }
-  
-  
-  if(chron_guide[array_guide[i]] == 1){
-    yr14C <- lpd.read[[array_guide[i]]]$chronData[[chron_guide[array_guide[i]]]]$measurementTable[[2]]$`14C age (yr BP)`$values
-    error <- lpd.read[[array_guide[i]]]$chronData[[chron_guide[array_guide[i]]]]$measurementTable[[2]]$error$values
-    
-    if(length(yr14C) == 0){
-      yr14C <- lpd.read[[array_guide[i]]]$chronData[[chron_guide[array_guide[i]]]]$measurementTable[[2]]$`14C age (BP)`$values
-    }
-    
-  }
-  if(chron_guide[array_guide[i]] == 2){
-    yr14C <- lpd.read[[array_guide[i]]]$chronData[[chron_guide[array_guide[i]]]]$measurementTable[[1]]$`14C age (yr BP)`$values
-    error <- lpd.read[[array_guide[i]]]$chronData[[chron_guide[array_guide[i]]]]$measurementTable[[1]]$error$values
-    
-    if(length(yr14C) == 0){
-      yr14C <- lpd.read[[array_guide[i]]]$chronData[[chron_guide[array_guide[i]]]]$measurementTable[[1]]$`14C age (cal yr BP)`$values
-    }
-    
-  }
-  if(chron_guide[array_guide[i]] == 0 | length(yr14C) == 0){
-    print(paste0("No Chron for ", APD_sel[i]))
-    if(length(APD_noread) == 0){ #Trying to make a list of sites that aren't read.
-      APD_noread = APD_sel[i]
-    } else {
-      new_list = c(APD_noread, APD_sel[i])
-      APD_noread = new_list
-    } #End of custom if statement for listing unread sites. 
-    yr14C <- c(NA, NA, NA)
-    error <- c(NA, NA, NA)
-  }
-  
-  if(is.character(yr14C) == TRUE){
-    yr14C = yr14C[-c(1)]
-    error = error[-c(1)]
-  }
-  
-  site_name <- rep(APD_sel[i], length(yr14C))
-  
-  APD_14C[[i]] = data.frame(yr14C, error, site_name)
-  
-}
-
-APD_14C <- as.array(APD_14C)
-
-names(APD_14C) <- as.list(APD_sel) #This yields an array with every radiocarbon date and its error.
