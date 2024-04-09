@@ -60,7 +60,9 @@ APD_depths <- lapply(lpd.read, function(x){
 for(i in 1:length(APD_depths)){
   if(is.character(APD_depths[[i]]) == TRUE){ #Look for characters
     APD_depths[[i]] = as.numeric(APD_depths[[i]][2:length(APD_depths[[i]])]) #Cut character sting and make numeric
-  } else {
+    
+  
+    } else {
     
   }
 }
@@ -68,11 +70,16 @@ for(i in 1:length(APD_depths)){
 #Write into new array.
 
 APD_array <- lapply(1:length(lpd.read), function(x){
-  matrix()
+  lapply(1:3, function(y){
+    matrix()
+  })
 })
 
 APD_array <- as.array(APD_array)
 names(APD_array) <- names(lpd.read)
+lapply(APD_array, function(x){
+  names(x) <- c("pollen_spores","sample_depths","chronology")
+})
 
 #Fill array with data
 
@@ -80,11 +87,22 @@ for(i in 1:length(lpd.read)){
   xrow = APD_depths[[i]]
   xcol = APD_taxa[[i]][5:length(APD_taxa[[i]])]
   pollen = matrix(nrow = length(xrow), ncol = length(xcol))
-  C14yr = as.numeric(lpd.read[[i]]$chronData[[1]]$measurementTable[[1]][[5]][['values']])
+  C14yr = data.frame(as.numeric(lpd.read[[i]]$chronData[[1]]$measurementTable[[1]][[5]][['values']]),
+                     as.numeric(lpd.read[[i]]$chronData[[1]]$measurementTable[[1]][[4]][['values']]))
+  
+  colnames(C14yr) = c("cal_yrBP","depth")
   
   for(j in 5:length(APD_taxa[[i]])){
+    if(APD_names[[i]] == "MONOUN"){
+      pull = lpd.read[[i]]$paleoData[[1]]$measurementTable[[1]][[j]][['values']]
+      pull = pull[2:length(pull)]
+      
+    } else {
+      
+      pull = as.numeric(lpd.read[[i]]$paleoData[[1]]$measurementTable[[1]][[j]][['values']])
     
-    pull = as.numeric(lpd.read[[i]]$paleoData[[1]]$measurementTable[[1]][[j]][['values']])
+    }
+    
     
     pull[is.na(pull) == TRUE] = 0
     
@@ -95,14 +113,18 @@ for(i in 1:length(lpd.read)){
   #pollen[is.na(pollen)==TRUE] = 0 #Replace NAs with 0s.
   pollen = as.data.frame(pollen)
   
-  row.names(pollen) <- C14yr
-  colnames(pollen) <- xcol
+  #row.names(pollen) <- C14yr
+  #colnames(pollen) <- xcol
   
-  APD_array[[i]] = pollen
+  colnames(pollen) = xcol
+  
+  APD_array[[i]][["pollen_spores"]] = pollen
+  APD_array[[i]][["sample_depths"]] = xrow
+  APD_array[[i]][["chronology"]] = C14yr
   
 }
 
-#This gives us an array with all pollen/spores.
+#Now we have an array with the records and component parts.
 
 
 
