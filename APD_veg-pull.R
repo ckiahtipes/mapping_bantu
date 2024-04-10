@@ -128,7 +128,7 @@ for(i in 1:length(lpd.read)){
 
 for(i in 1:length(APD_array)){
   write.csv(APD_array[[i]]$pollen_spores, paste0('APD_write',APD_names[i],'_pollen-spores.csv'))
-  write.csv(APD_array[[i]]$chronology, page0('APD_write',APD_names[i],'_chronology.csv'))
+  write.csv(APD_array[[i]]$chronology, paste0('APD_write',APD_names[i],'_chronology.csv'))
 }
 
 
