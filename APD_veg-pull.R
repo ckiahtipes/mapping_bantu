@@ -31,18 +31,6 @@ APD_lon <- sapply(lpd.read, function(x){
 APD_locations <- data.frame(as.numeric(APD_lon), as.numeric(APD_lat), row.names = names(APD_lon))
 colnames(APD_locations) <- c("APD_lon", "APD_lat")
 
-#Create array guide using APD_names object and extracted location data.
-
-APD_sel <- APD_names[APD_locations$APD_lon > LON_RANGE[1] &
-                       APD_locations$APD_lon < LON_RANGE[2] &
-                       APD_locations$APD_lat > LAT_RANGE[1] & 
-                       APD_locations$APD_lat < 8]
-
-array_guide <- c(1:length(APD_names))[APD_locations$APD_lon > LON_RANGE[1] &
-                                        APD_locations$APD_lon < LON_RANGE[2] &
-                                        APD_locations$APD_lat > LAT_RANGE[1] & 
-                                        APD_locations$APD_lat < 8]
-
 #This retrieves the taxon names from a given record.
 
 APD_taxa <- lapply(lpd.read, function(x){
@@ -102,7 +90,6 @@ for(i in 1:length(lpd.read)){
       pull = as.numeric(lpd.read[[i]]$paleoData[[1]]$measurementTable[[1]][[j]][['values']])
     
     }
-    
     
     pull[is.na(pull) == TRUE] = 0
     
