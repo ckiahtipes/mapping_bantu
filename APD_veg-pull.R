@@ -26,7 +26,7 @@ APD_lon <- sapply(lpd.read, function(x){
   x$geo$longitude
 })
 
-#Assemble location data into a data frame.
+#Assemble location data into a data frame
 
 APD_locations <- data.frame(as.numeric(APD_lon), as.numeric(APD_lat), row.names = names(APD_lon))
 colnames(APD_locations) <- c("APD_lon", "APD_lat")
